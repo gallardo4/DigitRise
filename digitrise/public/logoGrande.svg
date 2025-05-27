@@ -1,0 +1,11 @@
+<svg width="200" height="60" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="400" height="120" rx="20" fill="#4f46e5"/>
+  <text x="30" y="75" font-family="Helvetica Neue, sans-serif" font-size="48" fill="#ffffff" font-weight="bold">
+    Digit
+  </text>
+  <text x="150" y="75" font-family="Helvetica Neue, sans-serif" font-size="48" fill="#a5b4fc" font-weight="bold">
+    Rise
+  </text>
+  <path d="M360 90 L370 70 L380 90" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="370" cy="65" r="5" fill="#ffffff"/>
+</svg>
