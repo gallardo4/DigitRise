@@ -30,9 +30,9 @@ html, body {
 
   background: linear-gradient(270deg,
     #f7f7f7,  /* gris muy claro */
-    #ededed,  /* gris claro */
-    #dcdcdc,  /* gris medio-claro */
-    #ededed,  /* gris claro */
+    #cdd6ff,  /* gris claro */
+    #c7d0ff,  /* gris medio-claro */
+    #cdd6ff,  /* gris claro */
     #f7f7f7   /* gris muy claro */
   );
   background-size: 1000% 1000%;
@@ -185,7 +185,7 @@ html, body {
 }
 
 .hero {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto 3rem auto;
 }
@@ -227,7 +227,7 @@ html, body {
 }
 
 .info-extra {
-  text-align: center;
+  text-align: left;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
