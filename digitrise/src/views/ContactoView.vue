@@ -19,7 +19,7 @@ function enviarFormulario() {
   <section class="contacto">
     <div class="containerContacto">
       <h1 class="tituloContacto">Contacto</h1>
-      <p class="textoContacto">¿Tienes dudas o quieres más información? Rellena el formulario y nos pondremos en contacto contigo:</p>
+      <p class="textoContacto">¿Tienes dudas o quieres más información? Rellena el formulario y nos pondremos en contacto contigo.</p>
 
       <form @submit.prevent="enviarFormulario" class="formulario">
         <div class="inputGroup">

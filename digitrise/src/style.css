@@ -29,11 +29,11 @@ html, body {
   line-height: 1.6;
 
   background: linear-gradient(270deg,
-    #f7f7f7,  /* gris muy claro */
-    #cdd6ff,  /* gris claro */
-    #c7d0ff,  /* gris medio-claro */
-    #cdd6ff,  /* gris claro */
-    #f7f7f7   /* gris muy claro */
+    #e7ebff,  /* gris muy claro */
+    #d6ddfd,  /* gris claro */
+    #e7ebff,  /* gris medio-claro */
+    #d6ddfd,  /* gris claro */
+    #e7ebff   /* gris muy claro */
   );
   background-size: 1000% 1000%;
   animation: flowColors 10s ease infinite;
@@ -159,13 +159,12 @@ html, body {
 }
 
 .tituloHome {
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(2rem, 2.5vw, 4.5rem);
   color: var(--color-primary);
   margin-top: -1rem;
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   user-select: none;
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
@@ -178,7 +177,6 @@ html, body {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   user-select: none;
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
