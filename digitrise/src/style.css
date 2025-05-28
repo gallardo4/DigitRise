@@ -61,14 +61,11 @@ html, body {
 /* HEADER */
 .header {
   background: linear-gradient(90deg, var(--color-header-footer-bg), #6c63ff);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-bottom: 2px solid var(--color-primary);
   padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease-in-out;
-  backdrop-filter: saturate(180%) blur(8px);
-  -webkit-backdrop-filter: saturate(180%) blur(8px);
 }
 
 .header.hide-on-scroll {
@@ -88,7 +85,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  position: relative;
 }
 
 .logoHeader {
@@ -104,8 +101,12 @@ html, body {
 }
 
 .nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 2rem;
+  z-index: 1;
 }
 
 .nav-link {
@@ -155,7 +156,6 @@ html, body {
   margin-top: 3rem;
   padding: 2rem 1rem;
   color: #1f2937;
-  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .tituloHome {
@@ -201,14 +201,7 @@ html, body {
   text-align: center;
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  transition: box-shadow 0.3s ease;
-}
-
-.beneficios-modern:hover {
-  box-shadow: 0 15px 40px rgba(79, 70, 229, 0.25);
+  border: 2px solid var(--color-primary);
 }
 
 .textoHome {
@@ -277,14 +270,7 @@ html, body {
   text-align: left;
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.12);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  transition: box-shadow 0.3s ease;
-}
-
-.containerContacto:hover {
-  box-shadow: 0 15px 40px rgba(79, 70, 229, 0.25);
+  border: 2px solid var(--color-primary);
 }
 
 .tituloContacto {
@@ -294,7 +280,6 @@ html, body {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   user-select: none;
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
@@ -426,19 +411,17 @@ button:focus {
   background: linear-gradient(90deg, var(--color-header-footer-bg), #6c63ff);
   color: #f0f0f0;
   padding: 2.5rem 1.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
-  transition: background 0.3s ease;
+  border: 2px solid var(--color-primary);
 }
 
 .containerFooter {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.5rem;
+  text-align: center;
 }
 
 .logoFooter {
@@ -458,12 +441,6 @@ button:focus {
   font-size: 0.95rem;
   opacity: 0.75;
   user-select: none;
-}
-
-.footer-nav {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
 }
 
 .social-link {

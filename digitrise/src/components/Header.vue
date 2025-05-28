@@ -34,6 +34,7 @@ onMounted(() => {
         <RouterLink to="/plantillas" class="nav-link">Plantillas</RouterLink>
         <RouterLink to="/contacto" class="nav-link">Contacto</RouterLink>
       </nav>
+      <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>
     </div>
   </header>
 </template>
