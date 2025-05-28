@@ -1,4 +1,4 @@
-/* Variables para colores y tipografía */
+/* VARIABLES PARA COLORES Y TIPOGRAFÍA */
 :root {
   --color-primary: #4f46e5;
   --color-primary-dark: #4338ca;
@@ -11,7 +11,7 @@
   --transition-speed: 0.3s;
 }
 
-/* Reset básico */
+/* RESET */
 *,
 *::before,
 *::after {
@@ -51,7 +51,7 @@ html, body {
   }
 }
 
-/* Layout principal */
+/* LAYOUT */
 .layout {
   display: flex;
   flex-direction: column;
@@ -198,8 +198,8 @@ html, body {
 
 .beneficios-modern {
   max-width: 900px;
-  margin: 3rem auto 7rem;
-  padding: 1.5rem;
+  margin: 3rem auto 3rem;
+  padding: 3rem 1rem 1.5rem;
   text-align: center;
   background: #fff;
   border-radius: 1rem;
@@ -211,6 +211,15 @@ html, body {
 
 .beneficios-modern:hover {
   box-shadow: 0 15px 40px rgba(79, 70, 229, 0.25);
+}
+
+.textoHome {
+  font-size: 1.125rem;
+  color: #4b5563;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
 }
 
 .card-beneficio {
@@ -302,7 +311,6 @@ html, body {
   letter-spacing: 0.02em;
 }
 
-/* Floating label wrapper */
 .formulario {
   display: flex;
   flex-direction: column;
@@ -315,7 +323,6 @@ html, body {
   width: 100%;
 }
 
-/* Inputs and Textarea */
 input {
   width: 100%;
   padding: 1.2rem 1rem 0.5rem 1rem;
@@ -357,7 +364,6 @@ textarea:focus {
     inset -5px -5px 10px #ffffff;
 }
 
-/* Floating Labels */
 label {
   position: absolute;
   left: 1rem;
@@ -372,7 +378,6 @@ label {
   user-select: none;
 }
 
-/* Move label up when input is focused or has value */
 input:focus + label,
 input:not(:placeholder-shown) + label,
 textarea:focus + label,
@@ -384,7 +389,6 @@ textarea:not(:placeholder-shown) + label {
   letter-spacing: 0.05em;
 }
 
-/* Button modernizado: Glassmorphism + neomorphism */
 button {
   align-self: flex-start;
   padding: 0.85rem 2.25rem;
