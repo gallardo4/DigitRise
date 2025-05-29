@@ -1,4 +1,3 @@
-// src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -18,6 +17,11 @@ const router = createRouter({
       path: '/contacto',
       name: 'contacto',
       component: () => import('../views/ContactoView.vue'),
+    },
+    {
+      path: '/plantillas/:id',
+      name: 'plantilla-dinamica',
+      component: () => import('../views/plantillas/PlantillaBase.vue'),
     },
   ],
   scrollBehavior(to, from, savedPosition) {
