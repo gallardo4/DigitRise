@@ -70,6 +70,7 @@ html, body {
 
 .header.hide-on-scroll {
   transform: translateY(-110%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .header.scrolled {
@@ -411,7 +412,7 @@ button:focus {
   background: linear-gradient(90deg, var(--color-header-footer-bg), #6c63ff);
   color: #f0f0f0;
   padding: 2.5rem 1.5rem;
-  border: 2px solid var(--color-primary);
+  border-top: 2px solid var(--color-primary);
 }
 
 .containerFooter {
