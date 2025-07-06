@@ -31,7 +31,7 @@ onMounted(() => {
       <RouterLink to="/"><img src="/logoGrande.svg" alt="DigitRise Logo" class="logoHeader" /></RouterLink>
       <nav class="nav">
         <RouterLink to="/" class="nav-link">Inicio</RouterLink>
-        <RouterLink to="/plantillas" class="nav-link">Plantillas</RouterLink>
+        <RouterLink to="/agentes" class="nav-link">Agentes</RouterLink>
         <RouterLink to="/contacto" class="nav-link">Contacto</RouterLink>
       </nav>
       <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>

@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <router-link :to="`/plantillas/${id}`" class="plantilla-card block hover:shadow-lg">
+  <router-link :to="`/agentes/${id}`" class="agentes-card block hover:shadow-lg">
     <img :src="img" :alt="titulo" class="w-full h-48 object-cover" />
     <div class="p-4 bg-white">
       <h3 class="text-xl font-bold">{{ titulo }}</h3>
