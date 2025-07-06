@@ -1,12 +1,12 @@
-# 🚀 DigitRise
+# 🤖 DigitRise
 
-**DigitRise** es una plataforma que ayuda a digitalizar negocios físicos como restaurantes, peluquerías y tiendas locales, ofreciéndoles una web moderna y personalizable a través de plantillas prediseñadas. Este proyecto está construido con **Vue 3** y pensado para ser minimalista, intuitivo y visualmente atractivo.
+**DigitRise** es una plataforma que ofrece agentes de inteligencia artificial personalizados para empresas de todos los tamaños. Desde asistentes virtuales hasta soluciones de automatización para atención al cliente, ventas o soporte, DigitRise pone el poder de la IA al alcance de tu negocio. Este proyecto está construido con **Vue 3** y diseñado para ser simple, moderno y escalable.
 
 ---
 
 ## 🌐 Descripción
 
-DigitRise permite a emprendedores y pequeños negocios dar el salto al mundo digital con facilidad. Desde la selección de plantillas hasta la publicación de su propia página, todo está optimizado para ser rápido, claro y accesible.
+DigitRise permite a las empresas integrar fácilmente agentes de inteligencia artificial en sus flujos de trabajo. Ya sea que necesites un chatbot para atención al cliente, un agente de ventas automatizado o un asistente de soporte técnico, puedes encontrar una solución lista para usar, personalizarla, y activarla en minutos.
 
 ---
 
@@ -16,15 +16,16 @@ DigitRise permite a emprendedores y pequeños negocios dar el salto al mundo dig
 - Vue Router
 - HTML5 + CSS3
 - Diseño Responsive
-- Fuentes modernas (tipo "sans-serif")
-- Paleta de colores suaves y accesibles
+- Integración con APIs de IA
+- UI moderna con fuentes sans-serif
 
 ---
 
 ## ✨ Funcionalidades
 
-- 🌍 Plantillas para sitios web de distintos rubros (restaurantes, peluquerías, tiendas, etc.)
-- 🧩 Personalización visual intuitiva
-- ⚙️ Navegación con Vue Router
-- 💼 Página de contacto para clientes interesados
-- 📱 Diseño responsive
+- 🤖 Catálogo de agentes IA listos para distintos sectores
+- ⚙️ Personalización rápida de comportamiento y estilo
+- 🧠 Modelos optimizados para tareas específicas (ventas, soporte, FAQs, etc.)
+- 🔁 Integración sencilla en sitios web o plataformas existentes
+- 📞 Página de contacto para asesoría personalizada
+- 📱 Diseño adaptado a dispositivos móviles
