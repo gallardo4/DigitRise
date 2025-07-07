@@ -171,17 +171,6 @@ html, body {
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
 }
 
-.tituloHomeBeneficios {
-  font-size: 20px;
-  color: var(--color-primary);
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  user-select: none;
-  text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
-}
 
 .hero {
   text-align: left;
@@ -195,16 +184,6 @@ html, body {
   margin-bottom: 2rem;
 }
 
-.beneficios-modern {
-  max-width: 900px;
-  margin: 3rem auto 3rem;
-  padding: 3rem 1rem 1.5rem;
-  text-align: center;
-  background: #fff;
-  border-radius: 1rem;
-  border: 2px solid var(--color-primary);
-}
-
 .textoHome {
   font-size: 1.125rem;
   color: #4b5563;
@@ -212,10 +191,6 @@ html, body {
   max-width: 800px;
   margin: 0 auto;
   font-weight: 500;
-}
-
-.card-beneficio {
-  padding: 2rem;
 }
 
 .info-extra {
