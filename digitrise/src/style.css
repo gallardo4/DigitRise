@@ -270,8 +270,7 @@ main {
   }
 
   .logoHeader {
-    max-width: 130px;
-    margin-bottom: 0.5rem;
+    max-width: 250px;
   }
   .hamburger {
     display: flex;
