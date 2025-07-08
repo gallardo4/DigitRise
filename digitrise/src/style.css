@@ -552,14 +552,10 @@ textarea:not(:placeholder-shown) + label {
 }
 
 @media (max-width: 768px) {
-  .containerContacto {
-    margin: 2rem 1rem 5rem;
-    padding: 1rem;
-  }
 
   .tituloContacto {
     font-size: clamp(1.5rem, 5vw, 2.25rem);
-    text-align: center;
+    text-align: left;
   }
 
   .textoContacto {
