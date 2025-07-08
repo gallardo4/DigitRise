@@ -64,13 +64,6 @@ main {
   }
 }
 
-/* LAYOUT */
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 /* HEADER */
 .header {
   background: linear-gradient(90deg, var(--color-header-footer-bg), #6c63ff);
