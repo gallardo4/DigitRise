@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
 
 onMounted(() => {
   const header = document.querySelector('.header')
@@ -29,11 +35,26 @@ onMounted(() => {
   <header class="header">
     <div class="containerHeader">
       <RouterLink to="/"><img src="/logoGrande.svg" alt="DigitRise Logo" class="logoHeader" /></RouterLink>
-      <nav class="nav">
-        <RouterLink to="/" class="nav-link">Inicio</RouterLink>
-        <RouterLink to="/agentes" class="nav-link">Agentes</RouterLink>
-        <RouterLink to="/contacto" class="nav-link">Contacto</RouterLink>
+
+      <!-- Botón hamburguesa -->
+      <button
+        class="hamburger"
+        :class="{ open: isMenuOpen }"
+        @click="toggleMenu"
+        aria-label="Abrir menú"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Menú de navegación -->
+      <nav class="nav" :class="{ open: isMenuOpen }">
+        <RouterLink to="/" class="nav-link" @click="isMenuOpen = false">Inicio</RouterLink>
+        <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes</RouterLink>
+        <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
       </nav>
+
       <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>
     </div>
   </header>
