@@ -102,9 +102,7 @@ html, body {
 }
 
 .nav {
-  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 2rem;
   z-index: 1;
@@ -153,10 +151,11 @@ html, body {
 }
 
 .hamburger {
+  margin-left: auto;
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
+  width: 32px;
   height: 18px;
   background: none;
   border: none;
@@ -176,43 +175,61 @@ html, body {
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(6px);
 }
-
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-6px);
 }
 
-/* Estilos del menú para móviles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
 
-  .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-header-footer-bg);
-    padding: 1rem;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  }
+.nav-link {
+  font-weight: 700;
+  color: #f0f0f0;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color var(--transition-speed), border-color var(--transition-speed);
+}
 
-  .nav.open {
-    display: flex;
-  }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: width var(--transition-speed);
+  border-radius: 3px;
+}
 
-  .social-link {
-    margin-top: 1rem;
-  }
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-primary);
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+.nav-link.router-link-active {
+  color: var(--color-primary);
+}
+.nav-link.router-link-active::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
+
+  .header.hide-on-scroll {
+    transform: none !important;
+  }
+
   .containerHeader {
     flex-direction: column;
     align-items: flex-start;
@@ -226,6 +243,12 @@ html, body {
     gap: 1rem;
     width: 100%;
     margin-top: 1rem;
+    display: none;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1;
   }
 
   .nav-link {
@@ -236,6 +259,13 @@ html, body {
   .logoHeader {
     max-width: 130px;
     margin-bottom: 0.5rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .nav.open {
+    display: flex;
   }
 }
 
@@ -474,7 +504,7 @@ textarea:not(:placeholder-shown) + label {
   letter-spacing: 0.05em;
 }
 
-button {
+.btn {
   align-self: flex-start;
   padding: 0.85rem 2.25rem;
   font-size: 1.125rem;
@@ -497,8 +527,8 @@ button {
     -5px -5px 15px rgba(255 255 255, 0.7);
 }
 
-button:hover,
-button:focus {
+.btn:hover,
+.btn:focus {
   background-color: var(--color-primary);
   color: #fff;
   outline: none;
@@ -524,7 +554,7 @@ button:focus {
     text-align: center;
   }
 
-  button {
+  .btn {
     width: 100%;
     text-align: center;
     padding: 1rem;

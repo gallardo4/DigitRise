@@ -7,6 +7,7 @@
         </RouterLink>
         <p>&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
       </div>
+      <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>
     </div>
   </footer>
 </template>
