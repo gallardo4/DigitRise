@@ -245,7 +245,7 @@ main {
 
   .containerHeader {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
   }
 
@@ -345,12 +345,12 @@ main {
 @media (max-width: 768px) {
   .tituloHome {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
-    text-align: center;
+    text-align: left;
   }
 
   .hero, .textoHome, .info-extra {
     padding: 1rem;
-    text-align: center;
+    text-align: left;
   }
 
   .info-extra h3 {
@@ -469,6 +469,7 @@ input {
 textarea {
   width: 100%;
   height: 10rem;
+  min-height: 10rem;
   padding: 1.2rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   font-weight: 500;
