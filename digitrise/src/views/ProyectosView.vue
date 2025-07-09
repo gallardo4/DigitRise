@@ -30,29 +30,3 @@ const proyectos = [
         </div>
     </section>
 </template>
-
-<style scoped>
-.proyectos {
-    padding: 2rem;
-}
-
-.lista-proyectos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-}
-
-.proyecto {
-    max-width: 300px;
-    border: 1px solid #eee;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.proyecto img {
-    width: 100%;
-    border-radius: 0.5rem;
-}
-</style>

@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 
-// Importar imágenes desde assets
 const agentes = [
   {
     id: 1,
@@ -93,8 +92,6 @@ const agentes = [
   }
 ]
 
-
-
 const agenteSeleccionado = ref(null)
 
 function abrirDetalle(agente) {
@@ -108,147 +105,38 @@ function cerrarDetalle() {
 
 <template>
   <section class="agentes-container">
-    <h1>Catálogo de Agentes IA</h1>
+    <h1 class="tituloGrande">Catálogo de Agentes IA</h1>
 
     <div class="grid-agentes">
       <div v-for="agente in agentes" :key="agente.id" class="agente-card" @click="abrirDetalle(agente)" tabindex="0"
         role="button" @keyup.enter="abrirDetalle(agente)">
         <div class="cuadrado">
           <img :src="agente.img" :alt="agente.nombre" class="agente-img" />
-          <h2 class="titulo">{{ agente.titulo }}</h2>
+          <h2 class="tituloLittle">{{ agente.nombre }}</h2>
         </div>
       </div>
     </div>
-    <!-- Modal Detalle -->
+
+    <!-- MODAL -->
+
     <div v-if="agenteSeleccionado" class="modal-overlay" @click.self="cerrarDetalle">
       <div class="modal">
         <button class="cerrar-btn" @click="cerrarDetalle" aria-label="Cerrar">&times;</button>
-        <img :src="agenteSeleccionado.img" :alt="agenteSeleccionado.nombre"
-          style="width: 100%; border-radius: 12px; margin-bottom: 1rem;" />
-        <h2>{{ agenteSeleccionado.titulo }}</h2>
-        <p style="margin: 0.5rem 0;">{{ agenteSeleccionado.descripcion }}</p>
+        <img class="imgAgente" :src="agenteSeleccionado.img" :alt="agenteSeleccionado.nombre" />
+        <h2 class="tituloLittle">{{ agenteSeleccionado.titulo }}</h2>
+        <p class="texto" style="margin: 0.5rem 0;">{{ agenteSeleccionado.descripcion }}</p>
         <ul class="info-detalle">
-          <li><strong>Negocio ideal:</strong> {{ agenteSeleccionado.negocioIdeal }}</li>
-          <li><strong>Usabilidad:</strong> {{ agenteSeleccionado.usabilidad }}</li>
-          <li><strong>Dificultad de implementación:</strong> {{ agenteSeleccionado.dificultad }}</li>
+          <li class="texto"><strong>Negocio ideal:</strong> {{ agenteSeleccionado.negocioIdeal }}</li>
+          <li class="texto"><strong>Usabilidad:</strong> {{ agenteSeleccionado.usabilidad }}</li>
+          <li class="texto"><strong>Dificultad de implementación:</strong> {{ agenteSeleccionado.dificultad }}</li>
         </ul>
         <div>
-          <strong>Ventajas:</strong>
+          <strong class="texto">Ventajas:</strong>
           <ul>
-            <li v-for="(ventaja, index) in agenteSeleccionado.ventajas" :key="index">{{ ventaja }}</li>
+            <li class="texto" v-for="(ventaja, index) in agenteSeleccionado.ventajas" :key="index">{{ ventaja }}</li>
           </ul>
         </div>
       </div>
     </div>
-
   </section>
 </template>
-
-<style scoped>
-.agentes-container {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.grid-agentes {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.agente-card {
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  transition: box-shadow 0.3s ease;
-  overflow: hidden;
-  outline: none;
-  background: white;
-}
-
-.agente-card:hover,
-.agente-card:focus {
-  box-shadow: 0 6px 16px rgb(0 0 0 / 0.2);
-}
-
-.cuadrado {
-  aspect-ratio: 1 / 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: border-box;
-  background: #f9f9f9;
-}
-
-.agente-img {
-  width: 80%;
-  max-width: 200px;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.titulo {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #333;
-  text-align: center;
-  margin: 0;
-}
-
-/* Modal estilos */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 9999;
-}
-
-.modal {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-  position: relative;
-  text-align: left;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  max-height: 80vh;
-  /* Máximo 80% del alto de la ventana */
-  overflow-y: auto;
-  /* Scroll vertical si hace falta */
-}
-
-.cerrar-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.2s ease;
-}
-
-.cerrar-btn:hover {
-  color: black;
-}
-</style>

@@ -18,8 +18,8 @@ function enviarFormulario() {
 <template>
   <section class="contacto">
     <div class="containerContacto">
-      <h1 class="tituloContacto">Contacto</h1>
-      <p class="textoContacto">¿Tienes dudas o quieres más información? Rellena el formulario y nos pondremos en contacto contigo.</p>
+      <h1 class="tituloGrande">Contacto</h1>
+      <p class="texto">¿Tienes dudas o quieres más información? Rellena el formulario y nos pondremos en contacto contigo.</p>
 
       <form @submit.prevent="enviarFormulario" class="formulario">
         <div class="inputGroup">

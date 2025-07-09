@@ -1,13 +1,18 @@
 <template>
   <footer class="footer">
     <div class="containerFooter">
-      <div>
+      <div class="footer-spacer"></div>
+
+      <div class="footer-main">
         <RouterLink to="/">
           <img src="/logo.svg" alt="DigitRise Logo" class="logoFooter" />
         </RouterLink>
         <p>&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
       </div>
-      <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">Instagram</a>
+
+      <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">
+        <img src="/logoIG.png" alt="Logo Instagram" width="80px" />
+      </a>
     </div>
   </footer>
 </template>

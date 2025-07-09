@@ -14,6 +14,11 @@ const router = createRouter({
       component: () => import('../views/AgentesView.vue'),
     },
     {
+      path: '/agente/:id',
+      name: 'agenteDetalle',
+      component: () => import('../views/AgenteDetalleView.vue'),
+    },
+    {
       path: '/equipo',
       name: 'equipo',
       component: () => import('../views/EquipoView.vue'),
@@ -28,17 +33,13 @@ const router = createRouter({
       name: 'contacto',
       component: () => import('../views/ContactoView.vue'),
     },
-    /*    {
-          path: '/selector',
-          name: 'selector',
-          component: () => import('../views/SelectorView.vue'),
-        },
-        */
+    /*  
     {
-      path: '/plantillas/:id',
-      name: 'plantilla-dinamica',
-      component: () => import('../views/plantillas/PlantillaBase.vue'),
+      path: '/selector',
+      name: 'selector',
+      component: () => import('../views/SelectorView.vue'),
     },
+    */
   ],
   scrollBehavior() {
     return { top: 0 }
