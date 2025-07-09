@@ -402,6 +402,7 @@ main {
   transition: box-shadow 0.3s ease;
   overflow: hidden;
   outline: none;
+  text-decoration: none;
 }
 
 .tituloLittle {
@@ -416,13 +417,13 @@ main {
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
 }
 
-/*AGENTE DETALLE*/
+/* AGENTE DETALLE */
 
 .detalle-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 2rem auto;
   padding: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .volver {
@@ -431,7 +432,7 @@ main {
   display: inline-block;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #4c46a3;
+  color: #4f46e5;
 }
 
 

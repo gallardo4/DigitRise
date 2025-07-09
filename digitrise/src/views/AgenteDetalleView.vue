@@ -21,15 +21,15 @@ const agente = computed(() =>
         <p class="texto">{{ agente.descripcion }}</p>
 
         <ul class="info-detalle">
-            <li><strong>Negocio ideal:</strong> {{ agente.negocioIdeal }}</li>
-            <li><strong>Usabilidad:</strong> {{ agente.usabilidad }}</li>
-            <li><strong>Dificultad:</strong> {{ agente.dificultad }}</li>
+            <li class="texto"><strong>Negocio ideal:</strong> {{ agente.negocioIdeal }}</li>
+            <li class="texto"><strong>Usabilidad:</strong> {{ agente.usabilidad }}</li>
+            <li class="texto"><strong>Dificultad:</strong> {{ agente.dificultad }}</li>
         </ul>
 
         <div>
-            <strong>Ventajas:</strong>
+            <h4 class="texto"><strong>Ventajas:</strong></h4>
             <ul>
-                <li v-for="(v, i) in agente.ventajas" :key="i">{{ v }}</li>
+                <li class="texto" v-for="(v, i) in agente.ventajas" :key="i">{{ v }}</li>
             </ul>
         </div>
     </div>
