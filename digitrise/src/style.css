@@ -20,7 +20,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -34,12 +35,17 @@ html, body {
   line-height: 1.6;
 
   background: linear-gradient(270deg,
-    #e7ebff,  /* gris muy claro */
-    #d6ddfd,  /* gris claro */
-    #e7ebff,  /* gris medio-claro */
-    #d6ddfd,  /* gris claro */
-    #e7ebff   /* gris muy claro */
-  );
+      #e7ebff,
+      /* gris muy claro */
+      #d6ddfd,
+      /* gris claro */
+      #e7ebff,
+      /* gris medio-claro */
+      #d6ddfd,
+      /* gris claro */
+      #e7ebff
+      /* gris muy claro */
+    );
   background-size: 1000% 1000%;
   animation: flowColors 10s ease infinite;
 }
@@ -53,14 +59,16 @@ html, body {
 main {
   flex: 1;
 }
-  
+
 @keyframes flowColors {
   0% {
     background-position: 10% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 10% 50%;
   }
@@ -186,9 +194,11 @@ main {
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translateY(6px);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-6px);
 }
@@ -224,13 +234,16 @@ main {
 .nav-link:focus {
   color: var(--color-primary);
 }
+
 .nav-link:hover::after,
 .nav-link:focus::after {
   width: 100%;
 }
+
 .nav-link.router-link-active {
   color: var(--color-primary);
 }
+
 .nav-link.router-link-active::after {
   width: 100%;
 }
@@ -270,6 +283,7 @@ main {
   .logoHeader {
     max-width: 250px;
   }
+
   .hamburger {
     display: flex;
   }
@@ -349,7 +363,9 @@ main {
     text-align: left;
   }
 
-  .hero, .texto, .info-extra {
+  .hero,
+  .texto,
+  .info-extra {
     padding: 1rem;
     text-align: left;
   }
@@ -400,53 +416,58 @@ main {
   text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
 }
 
-/* MODAL AGENTE */
+/*AGENTE DETALLE*/
 
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.detalle-container {
+  max-width: 700px;
+  margin: 2rem auto;
   padding: 1rem;
-  z-index: 9999;
+  text-align: center;
 }
 
-.modal {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 100%;
-  position: relative;
-  text-align: left;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  max-height: 80vh;
-  overflow-y: auto;
+.volver {
+  text-transform: uppercase;
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #4c46a3;
 }
 
-.imgAgente {
+
+.detalle-img {
   width: 100%;
-  border-radius: 12px;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin: 1rem auto;
+}
+
+.tituloGrande {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.tituloLittle {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.texto {
+  margin: 1rem 0;
+}
+
+.info-detalle {
+  list-style: none;
+  padding: 0;
   margin-bottom: 1rem;
 }
 
-.cerrar-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.2s ease;
+.info-detalle li {
+  margin: 0.25rem 0;
 }
 
-.cerrar-btn:hover {
-  color: black;
-}
 
 /* AGENTE CARD */
 
@@ -457,11 +478,13 @@ main {
   padding: 20px;
   text-align: center;
 }
+
 .agente-card img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
 }
+
 .agente-card h3 {
   font-size: 1.1em;
   margin-bottom: 10px;
@@ -628,10 +651,10 @@ label {
   user-select: none;
 }
 
-input:focus + label,
-input:not(:placeholder-shown) + label,
-textarea:focus + label,
-textarea:not(:placeholder-shown) + label {
+input:focus+label,
+input:not(:placeholder-shown)+label,
+textarea:focus+label,
+textarea:not(:placeholder-shown)+label {
   top: 0.2rem;
   font-size: 0.8rem;
   color: var(--color-primary);
@@ -772,7 +795,9 @@ textarea:not(:placeholder-shown) + label {
 }
 
 @media (max-width: 480px) {
-  input, textarea {
+
+  input,
+  textarea {
     font-size: 0.95rem;
     padding: 1rem;
   }
@@ -782,10 +807,10 @@ textarea:not(:placeholder-shown) + label {
     top: 0.8rem;
   }
 
-  input:focus + label,
-  input:not(:placeholder-shown) + label,
-  textarea:focus + label,
-  textarea:not(:placeholder-shown) + label {
+  input:focus+label,
+  input:not(:placeholder-shown)+label,
+  textarea:focus+label,
+  textarea:not(:placeholder-shown)+label {
     font-size: 0.75rem;
     top: 0.1rem;
   }
