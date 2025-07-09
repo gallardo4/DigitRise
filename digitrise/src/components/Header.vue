@@ -37,12 +37,7 @@ onMounted(() => {
       <RouterLink to="/"><img src="/logoGrande.svg" alt="DigitRise Logo" class="logoHeader" /></RouterLink>
 
       <!-- Botón hamburguesa -->
-      <button
-        class="hamburger"
-        :class="{ open: isMenuOpen }"
-        @click="toggleMenu"
-        aria-label="Abrir menú"
-      >
+      <button class="hamburger" :class="{ open: isMenuOpen }" @click="toggleMenu" aria-label="Abrir menú">
         <span></span>
         <span></span>
         <span></span>
@@ -51,7 +46,9 @@ onMounted(() => {
       <!-- Menú de navegación -->
       <nav class="nav" :class="{ open: isMenuOpen }">
         <RouterLink to="/" class="nav-link" @click="isMenuOpen = false">Inicio</RouterLink>
-        <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes</RouterLink>
+        <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes IA</RouterLink>
+        <RouterLink to="/equipo" class="nav-link" @click="isMenuOpen = false">Equipo</RouterLink>
+        <RouterLink to="/proyectos" class="nav-link" @click="isMenuOpen = false">Proyectos</RouterLink>
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
       </nav>
     </div>

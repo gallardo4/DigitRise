@@ -14,17 +14,33 @@ const router = createRouter({
       component: () => import('../views/AgentesView.vue'),
     },
     {
+      path: '/equipo',
+      name: 'equipo',
+      component: () => import('../views/EquipoView.vue'),
+    },
+    {
+      path: '/proyectos',
+      name: 'proyectos',
+      component: () => import('../views/ProyectosView.vue'),
+    },
+    {
       path: '/contacto',
       name: 'contacto',
       component: () => import('../views/ContactoView.vue'),
     },
+    /*    {
+          path: '/selector',
+          name: 'selector',
+          component: () => import('../views/SelectorView.vue'),
+        },
+        */
     {
       path: '/plantillas/:id',
       name: 'plantilla-dinamica',
       component: () => import('../views/plantillas/PlantillaBase.vue'),
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     return { top: 0 }
   },
 })
