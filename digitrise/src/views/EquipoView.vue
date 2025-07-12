@@ -2,7 +2,7 @@
 // Aquí podrías importar el equipo desde un archivo JSON o composable si lo deseas
 const team = [
     {
-        nombre: 'Alex Martin Cobo',
+        nombre: 'Alex Martín',
         rol: 'Estrategia Digital',
         frase: 'La innovación empieza con una buena idea ejecutada con pasión.',
         imagen: '',
