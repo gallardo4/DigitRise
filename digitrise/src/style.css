@@ -534,7 +534,10 @@ main {
 /* PROYECTOS */
 
 .proyectos {
-  padding: 2rem;
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 0 1rem;
+  text-align: left;
 }
 
 .lista-proyectos {
@@ -545,7 +548,7 @@ main {
 }
 
 .proyecto {
-  max-width: 300px;
+  max-width: 350px;
   border: 1px solid #eee;
   padding: 1rem;
   border-radius: 1rem;
@@ -567,6 +570,10 @@ main {
   background: #fff;
   border-radius: 1rem;
   border: 2px solid var(--color-primary);
+}
+
+.containerContacto .tituloGrande {
+  margin-top: -0.5rem;
 }
 
 .textoContacto {
@@ -697,11 +704,6 @@ textarea:not(:placeholder-shown)+label {
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 2rem;
-  }
-
-  .tituloContacto {
-    font-size: clamp(1.5rem, 5vw, 2.25rem);
-    text-align: left;
   }
 
   .textoContacto {
