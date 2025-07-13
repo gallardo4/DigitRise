@@ -302,7 +302,6 @@ main {
 }
 
 .tituloGrande {
-  font-size: clamp(2rem, 2.5vw, 4.5rem);
   color: var(--color-primary);
   margin-top: -1rem;
   margin-bottom: 1.5rem;
@@ -317,6 +316,18 @@ main {
   text-align: left;
   max-width: 800px;
   margin: 0 auto 3rem auto;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 2.5vw, 4.5rem);
+  color: var(--color-primary);
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  user-select: none;
+  text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
 }
 
 .hero p {
