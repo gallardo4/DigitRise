@@ -343,6 +343,7 @@ main {
   max-width: 800px;
   margin: 0 auto;
   font-weight: 500;
+  user-select: none;
 }
 
 .info-extra {
@@ -407,10 +408,8 @@ main {
 
 .agente-card {
   cursor: pointer;
-  border: 1px solid #ddd;
   border-radius: 12px;
   border: 2px solid var(--color-primary);
-  transition: box-shadow 0.3s ease;
   overflow: hidden;
   outline: none;
   text-decoration: none;
@@ -534,7 +533,11 @@ main {
 }
 
 .miembro {
-  max-width: 300px;
+  max-width: 365px;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
+  padding: 1rem;
+  background-color: white;
 }
 
 .foto {
@@ -559,11 +562,11 @@ main {
 }
 
 .proyecto {
-  max-width: 350px;
-  border: 1px solid #eee;
+  max-width: 365px;
+  border-radius: 12px;
+  border: 2px solid var(--color-primary);
   padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  background-color: white;
 }
 
 .proyecto img {
