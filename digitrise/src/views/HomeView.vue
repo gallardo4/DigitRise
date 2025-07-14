@@ -20,14 +20,14 @@
         <RouterLink to="/equipo"><button class="btn">Conoce al equipo</button></RouterLink>
       </div>
 
-      <div>
+      <!-- <div>
         <h3 class="tituloGrande">Proyectos llevados a cabo</h3>
         <p class="texto">
           Descubre cómo hemos ayudado a empresas como la tuya a transformar su presencia digital y optimizar sus procesos
           con nuestras soluciones de IA. Cada proyecto es una historia de éxito.
         </p>
         <RouterLink to="/proyectos"><button class="btn">Descubre los proyectos</button></RouterLink>
-      </div>
+      </div> -->
 
       <div>
         <h3 class="tituloGrande">Soluciones inteligentes, listas para implementar</h3>
