@@ -438,6 +438,7 @@ main {
   margin-bottom: 1rem;
   text-decoration: none;
   color: #4f46e5;
+  user-select: none;
 }
 
 
