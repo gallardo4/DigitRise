@@ -40,6 +40,16 @@ const router = createRouter({
       component: () => import('../views/SelectorView.vue'),
     },
     */
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LogInView.vue'),
+    },
+      {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue'),
+    },
   ],
   scrollBehavior() {
     return { top: 0 }

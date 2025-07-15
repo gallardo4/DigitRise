@@ -116,10 +116,9 @@ main {
 }
 
 .nav {
+  position: absolute;
   left: 50%;
-  display: flex;
-  gap: 2rem;
-  z-index: 1;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -241,6 +240,45 @@ main {
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-6px);
+}
+
+.authButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btnHeader {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem; /* Más pequeño */
+  font-size: 1rem; /* Más pequeño */
+  font-weight: 800;
+  color: #ffffff;
+  background: transparent; /* Sin fondo */
+  backdrop-filter: none; /* Sin desenfoque */
+  -webkit-backdrop-filter: none;
+  border: 2px solid #ffffff;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    5px 5px 15px rgba(79, 70, 229, 0.3),
+    -5px -5px 15px rgba(255 255 255, 0.7);
+}
+
+.btnHeader:hover,
+.btnHeader:focus {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  outline: none;
+  transform: scale(1.05);
+  box-shadow:
+    8px 8px 20px rgba(67, 56, 202, 0.7),
+    -8px -8px 20px rgba(124, 119, 255, 0.7);
 }
 
 @media (max-width: 768px) {
@@ -586,15 +624,6 @@ main {
   margin-top: -0.5rem;
 }
 
-.textoContacto {
-  margin-bottom: 2.5rem;
-  color: #4b5563;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
 .formulario {
   display: flex;
   flex-direction: column;
@@ -727,6 +756,50 @@ textarea:not(:placeholder-shown)+label {
     padding: 1rem;
     font-size: 1rem;
   }
+}
+
+/* LOGIN */
+
+.containerLogin {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  text-align: left;
+  background: #fff;
+  border-radius: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.containerLogin .tituloGrande {
+  margin-top: -0.5rem;
+}
+
+.registerBtn {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* REGISTER */
+
+.containerRegister {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  text-align: left;
+  background: #fff;
+  border-radius: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.containerRegister .tituloGrande {
+  margin-top: -0.5rem;
+}
+
+.loginBtn {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 /* FOOTER */
