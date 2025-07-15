@@ -57,7 +57,7 @@ const tono = ref('')
                     tono
                 }
             }" class="boton-enviar">
-                🎯 Quiero este agente
+                Quiero este agente
             </RouterLink>
         </form>
     </section>
