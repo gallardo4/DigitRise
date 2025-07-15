@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { supabase } from '@/supabase'
 import { useRouter } from 'vue-router'
+import { supabase } from '../supabase'
 
 const router = useRouter()
 const email = ref('')
