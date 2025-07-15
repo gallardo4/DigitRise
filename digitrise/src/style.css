@@ -242,7 +242,11 @@ main {
   transform: rotate(-45deg) translateY(-6px);
 }
 
-.authButtons {
+.authButtons-mobile {
+  display: none;
+}
+
+.authButtons-desktop {
   display: flex;
   gap: 1rem;
 }
@@ -346,24 +350,22 @@ main {
     outline: none;
   }
 
-  .authButtons {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    gap: 1rem;
-    z-index: 1050;
+  .authButtons-desktop {
+    display: none;
+  }
+
+  .authButtons-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 3rem;
   }
 
   .btnHeader {
-    padding: 0.75rem 1.5rem;
+    width: 100%;
+    padding: 0.75rem 0;
     font-size: 1.2rem;
     border-radius: 2rem;
-    box-shadow:
-      5px 5px 15px rgba(79, 70, 229, 0.3),
-      -5px -5px 15px rgba(255 255 255, 0.7);
-    transition: box-shadow 0.3s ease;
   }
 
   .btnHeader:hover,
