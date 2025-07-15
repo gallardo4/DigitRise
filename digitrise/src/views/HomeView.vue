@@ -37,6 +37,14 @@
         </p>
         <RouterLink to="/contacto"><button class="btn">Habla con un experto</button></RouterLink>
       </div>
+
+      <div>
+        <h2 class="tituloGrande">¡Da el paso!</h2>
+        <p class="texto">
+          No esperes más para transformar tu negocio. Únete a la revolución de la inteligencia artificial con <strong>DigitRise</strong>.
+        </p>
+        <RouterLink to="/register"><button class="btn">¡Adelante!</button></RouterLink>
+      </div>
     </div>
   </section>
 </template>

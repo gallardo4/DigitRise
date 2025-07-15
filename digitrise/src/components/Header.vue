@@ -57,16 +57,16 @@ onMounted(() => {
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
 
         <!-- authButtons SOLO en móvil -->
-        <div class="authButtons authButtons-mobile">
-          <RouterLink to="/login"><button class="btnHeader" @click="isMenuOpen = false">Iniciar Sesión</button></RouterLink>
-          <RouterLink to="/register"><button class="btnHeader" @click="isMenuOpen = false">Registrarse</button></RouterLink>
+        <div class="authButtons-mobile">
+          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
+          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false" onclick="this.blur()">Registrarse</button></RouterLink>
         </div>
       </nav>
 
       <!-- authButtons SOLO en desktop -->
-      <div class="authButtons authButtons-desktop">
-        <RouterLink to="/login"><button class="btnHeader" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
-        <RouterLink to="/register"><button class="btnHeader" onclick="this.blur()">Registrarse</button></RouterLink>
+      <div class="authButtons-desktop">
+        <RouterLink to="/login"><button class="btnHeaderLogin" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
+        <RouterLink to="/register"><button class="btnHeaderRegister" onclick="this.blur()">Registrarse</button></RouterLink>
       </div>
     </div>
   </header>

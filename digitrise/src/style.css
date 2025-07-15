@@ -251,7 +251,7 @@ main {
   gap: 1rem;
 }
 
-.btnHeader {
+.btnHeaderLogin {
   align-self: flex-start;
   padding: 0.5rem 1.25rem; /* Más pequeño */
   font-size: 1rem; /* Más pequeño */
@@ -274,8 +274,110 @@ main {
     -5px -5px 15px rgba(255 255 255, 0.7);
 }
 
-.btnHeader:hover,
-.btnHeader:focus {
+.btnHeaderLogin:hover,
+.btnHeaderLogin:focus {
+  background-color: #333333;
+  color: #fff;
+  outline: none;
+  transform: scale(1.05);
+  box-shadow:
+    8px 8px 20px rgba(67, 56, 202, 0.7),
+    -8px -8px 20px rgba(124, 119, 255, 0.7);
+}
+
+.btnHeaderRegister {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem; /* Más pequeño */
+  font-size: 1rem; /* Más pequeño */
+  font-weight: 800;
+  color: #ffffff;
+  background: transparent; /* Sin fondo */
+  backdrop-filter: none; /* Sin desenfoque */
+  -webkit-backdrop-filter: none;
+  border: 2px solid #ffffff;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    5px 5px 15px rgba(79, 70, 229, 0.3),
+    -5px -5px 15px rgba(255 255 255, 0.7);
+}
+
+.btnHeaderRegister:hover,
+.btnHeaderRegister:focus {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  outline: none;
+  transform: scale(1.05);
+  box-shadow:
+    8px 8px 20px rgba(67, 56, 202, 0.7),
+    -8px -8px 20px rgba(124, 119, 255, 0.7);
+}
+
+.btnHeaderLoginPhone {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem; /* Más pequeño */
+  font-size: 1rem; /* Más pequeño */
+  font-weight: 800;
+  color: #ffffff;
+  background: transparent; /* Sin fondo */
+  backdrop-filter: none; /* Sin desenfoque */
+  -webkit-backdrop-filter: none;
+  border: 2px solid #ffffff;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    5px 5px 15px rgba(79, 70, 229, 0.3),
+    -5px -5px 15px rgba(255 255 255, 0.7);
+}
+
+.btnHeaderLoginPhone:hover,
+.btnHeaderLoginPhone:focus {
+  background-color: #333333;
+  color: #fff;
+  outline: none;
+  transform: scale(1.05);
+  box-shadow:
+    8px 8px 20px rgba(67, 56, 202, 0.7),
+    -8px -8px 20px rgba(124, 119, 255, 0.7);
+}
+
+.btnHeaderRegisterPhone {
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem; /* Más pequeño */
+  font-size: 1rem; /* Más pequeño */
+  font-weight: 800;
+  color: #ffffff;
+  background: transparent; /* Sin fondo */
+  backdrop-filter: none; /* Sin desenfoque */
+  -webkit-backdrop-filter: none;
+  border: 2px solid #ffffff;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    5px 5px 15px rgba(79, 70, 229, 0.3),
+    -5px -5px 15px rgba(255 255 255, 0.7);
+}
+
+.btnHeaderRegisterPhone:hover,
+.btnHeaderRegisterPhone:focus {
   background-color: #ffffff;
   color: var(--color-primary);
   outline: none;
@@ -345,7 +447,6 @@ main {
 
   .nav-link:hover,
   .nav-link:focus {
-    background-color: var(--color-primary);
     color: white;
     outline: none;
   }
@@ -358,7 +459,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   .btnHeader {
@@ -368,8 +469,15 @@ main {
     border-radius: 2rem;
   }
 
-  .btnHeader:hover,
-  .btnHeader:focus {
+  .btnHeaderLoginPhone:hover,
+  .btnHeaderLoginPhone:focus {
+    box-shadow:
+      8px 8px 20px rgba(67, 56, 202, 0.7),
+      -8px -8px 20px rgba(124, 119, 255, 0.7);
+  }
+
+  .btnHeaderRegisterPhone:hover,
+  .btnHeaderRegisterPhone:focus {
     box-shadow:
       8px 8px 20px rgba(67, 56, 202, 0.7),
       -8px -8px 20px rgba(124, 119, 255, 0.7);
