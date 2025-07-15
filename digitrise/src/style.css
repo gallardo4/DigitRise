@@ -462,7 +462,14 @@ main {
     margin-top: 1rem;
   }
 
-  .btnHeader {
+  .btnHeaderLoginPhone {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+  }
+
+  .btnHeaderRegisterPhone {
     width: 100%;
     padding: 1rem;
     font-size: 1.2rem;
