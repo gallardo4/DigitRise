@@ -65,8 +65,8 @@ onMounted(() => {
 
       <!-- authButtons SOLO en desktop -->
       <div class="authButtons authButtons-desktop">
-        <RouterLink to="/login"><button class="btnHeader">Iniciar Sesión</button></RouterLink>
-        <RouterLink to="/register"><button class="btnHeader">Registrarse</button></RouterLink>
+        <RouterLink to="/login"><button class="btnHeader" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
+        <RouterLink to="/register"><button class="btnHeader" onclick="this.blur()">Registrarse</button></RouterLink>
       </div>
     </div>
   </header>
