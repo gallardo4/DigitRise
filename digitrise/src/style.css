@@ -253,12 +253,12 @@ main {
 
 .btnHeaderLogin {
   align-self: flex-start;
-  padding: 0.5rem 1.25rem; /* Más pequeño */
-  font-size: 1rem; /* Más pequeño */
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
-  background: transparent; /* Sin fondo */
-  backdrop-filter: none; /* Sin desenfoque */
+  background: transparent;
+  backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
@@ -287,12 +287,12 @@ main {
 
 .btnHeaderRegister {
   align-self: flex-start;
-  padding: 0.5rem 1.25rem; /* Más pequeño */
-  font-size: 1rem; /* Más pequeño */
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
-  background: transparent; /* Sin fondo */
-  backdrop-filter: none; /* Sin desenfoque */
+  background: transparent;
+  backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
@@ -321,12 +321,12 @@ main {
 
 .btnHeaderLoginPhone {
   align-self: flex-start;
-  padding: 0.5rem 1.25rem; /* Más pequeño */
-  font-size: 1rem; /* Más pequeño */
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
-  background: transparent; /* Sin fondo */
-  backdrop-filter: none; /* Sin desenfoque */
+  background: transparent;
+  backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
@@ -355,12 +355,12 @@ main {
 
 .btnHeaderRegisterPhone {
   align-self: flex-start;
-  padding: 0.5rem 1.25rem; /* Más pequeño */
-  font-size: 1rem; /* Más pequeño */
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
   font-weight: 800;
   color: #ffffff;
-  background: transparent; /* Sin fondo */
-  backdrop-filter: none; /* Sin desenfoque */
+  background: transparent;
+  backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
@@ -416,7 +416,7 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(28, 24, 56, 0.95); /* color semi-oscuro */
+    background-color: rgba(28, 24, 56, 0.95);
     backdrop-filter: blur(8px);
     flex-direction: column;
     gap: 2.5rem;
@@ -944,10 +944,30 @@ textarea:not(:placeholder-shown)+label {
   margin-top: -0.5rem;
 }
 
+.resetPasswordBtn {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
 .registerBtn {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 700;
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  max-width: 800px;
+  font-weight: 500;
+}
+.success {
+  color: #2e7d32;
+}
+.error {
+  color: #c62828;
 }
 
 @media (max-width: 768px) {
@@ -986,6 +1006,22 @@ textarea:not(:placeholder-shown)+label {
     margin-right: 2rem;
     padding: 2rem;
   }
+}
+
+/* RESET PASSWORD */
+
+.containerResetPassword {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  text-align: left;
+  background: #fff;
+  border-radius: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.containerResetPassword .tituloGrande {
+  margin-top: -0.5rem;
 }
 
 /* FOOTER */

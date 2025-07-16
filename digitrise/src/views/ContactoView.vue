@@ -37,7 +37,7 @@ function enviarFormulario() {
           <label for="mensaje">Mensaje</label>
         </div>
 
-        <button type="submit" class="btn">Enviar</button>
+        <button type="submit" class="btn" onclick="this.blur()">Enviar</button>
       </form>
     </div>
   </section>

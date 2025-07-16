@@ -50,6 +50,16 @@ const router = createRouter({
       name: 'register',
       component: () => import('../views/RegisterView.vue'),
     },
+    {
+      path: '/reset-password',
+      name: 'resetPassword',
+      component: () => import('../views/ResetPasswordView.vue'),
+    },
+    {
+      path: '/reset-password-update',
+      name: 'resetPasswordUpdate',
+      component: () => import('../views/ResetPasswordUpdateView.vue'),
+    },
   ],
   scrollBehavior() {
     return { top: 0 }
