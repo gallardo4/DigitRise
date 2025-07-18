@@ -36,6 +36,10 @@ async function resetPassword() {
     <div class="containerResetPassword">
       <h1 class="tituloGrande">Restablecer Contraseña</h1>
 
+      <p class="texto">
+        Introduce tu correo electrónico para recibir un enlace de restablecimiento de contraseña.
+      </p>
+
       <form @submit.prevent="resetPassword" class="formulario">
         <div class="inputGroup">
           <input type="email" id="email" v-model="email" placeholder=" " required />

@@ -828,6 +828,29 @@ main {
   margin-top: -0.5rem;
 }
 
+.correoLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .containerContacto {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* FORMULARIO */
+
 .formulario {
   display: flex;
   flex-direction: column;
@@ -908,6 +931,8 @@ textarea:not(:placeholder-shown)+label {
   letter-spacing: 0.05em;
 }
 
+/* BOTÓN */
+
 .btn {
   align-self: flex-start;
   padding: 0.85rem 2.25rem;
@@ -940,26 +965,6 @@ textarea:not(:placeholder-shown)+label {
   box-shadow:
     8px 8px 20px rgba(67, 56, 202, 0.7),
     -8px -8px 20px rgba(124, 119, 255, 0.7);
-}
-
-@media (max-width: 768px) {
-  .containerContacto {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    padding: 2rem;
-  }
-
-  .textoContacto {
-    font-size: 1rem;
-    text-align: left;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-    font-size: 1rem;
-  }
 }
 
 /* LOGIN */
