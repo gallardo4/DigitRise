@@ -24,29 +24,52 @@ async function login() {
     return
   }
 
-  const userId = data.user?.id
-  if (!userId) {
-    message.value = 'No se pudo obtener el ID del usuario.'
+  const user = data.user
+  if (!user) {
+    message.value = 'No se pudo obtener el usuario.'
     isError.value = true
     return
   }
 
-  const { error: updateError } = await supabase
+  // Verificar si el perfil ya existe
+  const { data: existingUser, error: selectError } = await supabase
     .from('users')
-    .update({ last_login: new Date().toISOString() })
-    .eq('id', userId)
+    .select('id')
+    .eq('id', user.id)
+    .single()
 
-  if (updateError) {
-    message.value = 'Error al actualizar último acceso: ' + updateError.message
+  if (selectError && selectError.code !== 'PGRST116') {
+    message.value = 'Error verificando usuario: ' + selectError.message
     isError.value = true
     return
+  }
+
+  // Insertar perfil si no existe
+  if (!existingUser) {
+    const { error: insertError } = await supabase.from('users').insert({
+      id: user.id,
+      name: user.user_metadata?.name ?? '', // o puedes pedirlo después
+      email: user.email,
+      last_login: new Date().toISOString(),
+    })
+
+    if (insertError) {
+      message.value = 'Error al crear el perfil: ' + insertError.message
+      isError.value = true
+      return
+    }
+  } else {
+    // Solo actualizar el login si ya existía
+    await supabase
+      .from('users')
+      .update({ last_login: new Date().toISOString() })
+      .eq('id', user.id)
   }
 
   message.value = 'Sesión iniciada con éxito. Redirigiendo...'
-  isError.value = false
 
   setTimeout(() => {
-    router.push('/home')
+    router.push('/')
   }, 1000)
 }
 </script>

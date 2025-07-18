@@ -14,43 +14,18 @@ async function register() {
   message.value = ''
   isError.value = false
 
-  // Paso 1: Crear usuario en Supabase Auth
-  const { data: authData, error: authError } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email: email.value,
     password: password.value,
+    options: {
+      data: {
+        name: nombre.value, // Puedes guardar el nombre como metadata opcional
+      },
+    },
   })
 
-  if (authError) {
-    message.value = 'Error al registrarse: ' + authError.message
-    isError.value = true
-    return
-  }
-
-  const userId = authData.user?.id
-  if (!userId) {
-    message.value = 'No se pudo obtener el ID del usuario.'
-    isError.value = true
-    return
-  }
-
-  // Esperar a que la sesión esté lista para insertar como el usuario autenticado
-  const { data: userData, error: sessionError } = await supabase.auth.getUser()
-  if (sessionError || !userData.user) {
-    message.value = 'Sesión inválida. Vuelve a intentarlo.'
-    isError.value = true
-    return
-  }
-
-  // Paso 2: Insertar en tabla "users" (bajo RLS del usuario logueado)
-  const { error: dbError } = await supabase.from('users').insert({
-    id: userId,
-    name: nombre.value,
-    email: email.value,
-    last_login: new Date().toISOString(),
-  })
-
-  if (dbError) {
-    message.value = 'Error al guardar en la base de datos: ' + dbError.message
+  if (error) {
+    message.value = 'Error al registrarse: ' + error.message
     isError.value = true
     return
   }
@@ -60,7 +35,7 @@ async function register() {
 
   setTimeout(() => {
     router.push('/login')
-  }, 1500)
+  }, 2000)
 }
 </script>
 
