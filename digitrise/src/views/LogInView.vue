@@ -79,6 +79,10 @@ async function login() {
     <div class="containerLogin">
       <h1 class="tituloGrande">Inicio de Sesión</h1>
 
+      <p class="texto">
+        <strong>Inicia sesión para seguir explorando.</strong>
+      </p>
+
       <form @submit.prevent="login" class="formulario">
         <div class="inputGroup">
           <input type="email" id="email" v-model="email" placeholder=" " required />

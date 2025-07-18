@@ -44,6 +44,10 @@ async function register() {
     <div class="containerRegister">
       <h1 class="tituloGrande">Registro</h1>
 
+      <p class="texto">
+        <strong>Únete a la comunidad que transforma ideas en realidades.</strong>
+      </p>
+
       <form @submit.prevent="register" class="formulario">
         <div class="inputGroup">
           <input type="text" id="nombre" v-model="nombre" placeholder=" " required />
