@@ -1,29 +1,26 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
 import { ref, watch, onMounted, onUnmounted } from 'vue'
 import { supabase } from '../supabase'
-import type { User } from '@supabase/supabase-js' // Importa el tipo User de supabase-js
+import type { User } from '@supabase/supabase-js'
+
+const router = useRouter()
 
 const isMenuOpen = ref(false)
-const user = ref<User | null>(null)  // aquí indicamos que puede ser User o null
+const user = ref<User | null>(null)
 
-// Detectar estado inicial de sesión
 async function checkSession() {
   const { data } = await supabase.auth.getSession()
   user.value = data.session?.user ?? null
 }
 checkSession()
 
-// Escuchar cambios de sesión
 supabase.auth.onAuthStateChange((_event, session) => {
   user.value = session?.user ?? null
 })
 
 watch(isMenuOpen, (open) => {
-  if (open) {
-    document.body.classList.add('menu-open')
-  } else {
-    document.body.classList.remove('menu-open')
-  }
+  document.body.classList.toggle('menu-open', open)
 })
 
 const toggleMenu = () => {
@@ -34,6 +31,7 @@ async function signOut() {
   await supabase.auth.signOut()
   user.value = null
   isMenuOpen.value = false
+  router.push('/login')
 }
 
 onMounted(() => {
@@ -42,21 +40,16 @@ onMounted(() => {
 
   const onScroll = () => {
     const currentScroll = window.scrollY
-
     if (currentScroll > lastScrollTop && currentScroll > 80) {
-      header?.classList.add('hide-on-scroll') // scroll down
+      header?.classList.add('hide-on-scroll')
     } else {
-      header?.classList.remove('hide-on-scroll') // scroll up
+      header?.classList.remove('hide-on-scroll')
     }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
+    lastScrollTop = Math.max(currentScroll, 0)
   }
 
   window.addEventListener('scroll', onScroll)
-
-  onUnmounted(() => {
-    window.removeEventListener('scroll', onScroll)
-  })
+  onUnmounted(() => window.removeEventListener('scroll', onScroll))
 })
 </script>
 
@@ -78,22 +71,24 @@ onMounted(() => {
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
 
         <div class="authButtons-mobile" v-if="!user">
-          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
-          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false" onclick="this.blur()">Registrarse</button></RouterLink>
+          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false">Iniciar Sesión</button></RouterLink>
+          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false">Registrarse</button></RouterLink>
         </div>
 
         <div class="authButtons-mobile" v-else>
-          <button class="btnHeaderRegisterPhone" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
+          <RouterLink to="/perfil"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false">Perfil</button></RouterLink>
+          <button class="btnHeaderRegisterPhone" @click="signOut">Cerrar Sesión</button>
         </div>
       </nav>
 
       <div class="authButtons-desktop" v-if="!user">
-        <RouterLink to="/login"><button class="btnHeaderLogin" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
-        <RouterLink to="/register"><button class="btnHeaderRegister" onclick="this.blur()">Registrarse</button></RouterLink>
+        <RouterLink to="/login"><button class="btnHeaderLogin">Iniciar Sesión</button></RouterLink>
+        <RouterLink to="/register"><button class="btnHeaderRegister">Registrarse</button></RouterLink>
       </div>
 
       <div class="authButtons-desktop" v-else>
-        <button class="btnHeaderSignout" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
+        <RouterLink to="/perfil"><button class="btnHeaderLogin">Perfil</button></RouterLink>
+        <button class="btnHeaderSignout" @click="signOut">Cerrar Sesión</button>
       </div>
     </div>
   </header>

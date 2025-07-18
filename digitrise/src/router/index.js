@@ -60,6 +60,11 @@ const router = createRouter({
       name: 'resetPasswordUpdate',
       component: () => import('../views/ResetPasswordUpdateView.vue'),
     },
+    {
+      path: '/perfil',
+      name: 'perfil',
+      component: () => import('../views/PerfilView.vue'),
+    },
   ],
   scrollBehavior() {
     return { top: 0 }

@@ -1066,6 +1066,22 @@ textarea:not(:placeholder-shown)+label {
   }
 }
 
+/* PERFIL */
+
+.containerPerfil {
+  max-width: 600px;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  text-align: left;
+  background: #fff;
+  border-radius: 1rem;
+  border: 2px solid var(--color-primary);
+}
+
+.containerPerfil .tituloGrande {
+  margin-top: -0.5rem;
+}
+
 /* FOOTER */
 
 .footer {
