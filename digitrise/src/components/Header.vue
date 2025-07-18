@@ -1,7 +1,22 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { supabase } from '../supabase'  // importa supabase
+import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
+const user = ref(null)
+
+// Detectar estado inicial de sesión
+async function checkSession() {
+  const { data } = await supabase.auth.getSession()
+  user.value = data.session?.user ?? null
+}
+checkSession()
+
+// Escuchar cambios de sesión
+supabase.auth.onAuthStateChange((_event, session) => {
+  user.value = session?.user ?? null
+})
 
 watch(isMenuOpen, (open) => {
   if (open) {
@@ -15,6 +30,12 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
+async function signOut() {
+  await supabase.auth.signOut()
+  user.value = null
+  isMenuOpen.value = false
+}
+
 onMounted(() => {
   const header = document.querySelector('.header')
   let lastScrollTop = window.scrollY
@@ -23,9 +44,9 @@ onMounted(() => {
     const currentScroll = window.scrollY
 
     if (currentScroll > lastScrollTop && currentScroll > 80) {
-      header?.classList.add('hide-on-scroll') // scroll abajo
+      header?.classList.add('hide-on-scroll') // scroll down
     } else {
-      header?.classList.remove('hide-on-scroll') // scroll arriba
+      header?.classList.remove('hide-on-scroll') // scroll up
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll
@@ -56,17 +77,23 @@ onMounted(() => {
         <RouterLink to="/equipo" class="nav-link" @click="isMenuOpen = false">Equipo</RouterLink>
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
 
-        <!-- authButtons SOLO en móvil -->
-        <div class="authButtons-mobile">
+        <div class="authButtons-mobile" v-if="!user">
           <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
           <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false" onclick="this.blur()">Registrarse</button></RouterLink>
         </div>
+
+        <div class="authButtons-mobile" v-else>
+          <button class="btnHeaderRegisterPhone" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
+        </div>
       </nav>
 
-      <!-- authButtons SOLO en desktop -->
-      <div class="authButtons-desktop">
+      <div class="authButtons-desktop" v-if="!user">
         <RouterLink to="/login"><button class="btnHeaderLogin" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
         <RouterLink to="/register"><button class="btnHeaderRegister" onclick="this.blur()">Registrarse</button></RouterLink>
+      </div>
+
+      <div class="authButtons-desktop" v-else>
+        <button class="btnHeaderSignout" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
       </div>
     </div>
   </header>
