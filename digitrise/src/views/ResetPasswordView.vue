@@ -49,6 +49,8 @@ async function resetPassword() {
         </p>
       </form>
 
+      <p class="texto"><strong>Este proceso puede tardar unos minutos</strong></p>
+
       <p class="texto">
         ¿Recuperaste tu contraseña?
         <RouterLink to="/login" class="loginBtn">
