@@ -1058,6 +1058,14 @@ textarea:not(:placeholder-shown)+label {
   margin-top: -0.5rem;
 }
 
+@media (max-width: 768px) {
+  .containerResetPassword {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem;
+  }
+}
+
 /* FOOTER */
 
 .footer {
