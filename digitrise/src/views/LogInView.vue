@@ -70,7 +70,7 @@ async function login() {
 
   setTimeout(() => {
     router.push('/')
-  }, 500)
+  }, 200)
 }
 </script>
 
