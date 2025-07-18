@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from 'vue'
-import { supabase } from '../supabase'  // importa supabase
-import { RouterLink } from 'vue-router'
+import { supabase } from '../supabase'
+import type { User } from '@supabase/supabase-js' // Importa el tipo User de supabase-js
 
 const isMenuOpen = ref(false)
-const user = ref(null)
+const user = ref<User | null>(null)  // aquí indicamos que puede ser User o null
 
 // Detectar estado inicial de sesión
 async function checkSession() {
