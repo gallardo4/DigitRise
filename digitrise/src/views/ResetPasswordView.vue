@@ -12,7 +12,9 @@ async function resetPassword() {
   message.value = ''
   isError.value = false
 
-  const { error } = await supabase.auth.resetPasswordForEmail(email.value)
+  const { error } = await supabase.auth.resetPasswordForEmail(email.value, {
+    redirectTo: 'https://digitrise.net/reset-password-update',
+  })
 
   if (error) {
     message.value = 'Error al enviar el enlace de restablecimiento: ' + error.message

@@ -35,7 +35,7 @@ async function register() {
 
   setTimeout(() => {
     router.push('/login')
-  }, 2000)
+  }, 1500)
 }
 </script>
 
