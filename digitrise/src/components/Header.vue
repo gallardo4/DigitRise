@@ -71,24 +71,24 @@ onMounted(() => {
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
 
         <div class="authButtons-mobile" v-if="!user">
-          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false">Iniciar Sesión</button></RouterLink>
-          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false">Registrarse</button></RouterLink>
+          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
+          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false" onclick="this.blur()">Registrarse</button></RouterLink>
         </div>
 
         <div class="authButtons-mobile" v-else>
-          <RouterLink to="/perfil"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false">Perfil</button></RouterLink>
-          <button class="btnHeaderRegisterPhone" @click="signOut">Cerrar Sesión</button>
+          <RouterLink to="/perfil"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Perfil</button></RouterLink>
+          <button class="btnHeaderRegisterPhone" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
         </div>
       </nav>
 
       <div class="authButtons-desktop" v-if="!user">
-        <RouterLink to="/login"><button class="btnHeaderLogin">Iniciar Sesión</button></RouterLink>
-        <RouterLink to="/register"><button class="btnHeaderRegister">Registrarse</button></RouterLink>
+        <RouterLink to="/login"><button class="btnHeaderLogin" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
+        <RouterLink to="/register"><button class="btnHeaderRegister" onclick="this.blur()">Registrarse</button></RouterLink>
       </div>
 
       <div class="authButtons-desktop" v-else>
-        <RouterLink to="/perfil"><button class="btnHeaderLogin">Perfil</button></RouterLink>
-        <button class="btnHeaderSignout" @click="signOut">Cerrar Sesión</button>
+        <RouterLink to="/perfil"><button class="btnHeaderLogin" onclick="this.blur()">Perfil</button></RouterLink>
+        <button class="btnHeaderSignout" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
       </div>
     </div>
   </header>
