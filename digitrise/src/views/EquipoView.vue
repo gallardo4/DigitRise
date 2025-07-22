@@ -11,7 +11,7 @@ const team = [
         nombre: 'Arnau Gallardo',
         rol: 'Desarrollo Web, IA y Automatización',
         frase: 'Cada línea de código es una oportunidad para mejorar el mundo. La IA no reemplaza personas, potencia su creatividad.',
-        imagen: '',
+        imagen: '/imgEquipo/fotoGallardo.jpg',
     },
 ]
 </script>
@@ -24,7 +24,7 @@ const team = [
 
         <div class="miembros">
             <div v-for="persona in team" :key="persona.nombre" class="miembro">
-                <!-- <img :src="persona.imagen" :alt="persona.nombre" class="foto" /> -->
+                <img :src="persona.imagen" :alt="persona.nombre" class="foto" />
                 <h3 class="tituloLittle">{{ persona.nombre }}</h3>
                 <p class="texto"><strong>{{ persona.rol }}</strong></p>
                 <blockquote class="texto">{{ persona.frase }}</blockquote>

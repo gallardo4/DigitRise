@@ -67,6 +67,7 @@ onMounted(() => {
       <nav class="nav" :class="{ open: isMenuOpen }">
         <RouterLink to="/" class="nav-link" @click="isMenuOpen = false">Inicio</RouterLink>
         <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes IA</RouterLink>
+        <RouterLink to="/proyectos" class="nav-link" @click="isMenuOpen = false">Proyectos</RouterLink>
         <RouterLink to="/equipo" class="nav-link" @click="isMenuOpen = false">Equipo</RouterLink>
         <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
 
