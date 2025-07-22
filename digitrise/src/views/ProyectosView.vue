@@ -2,7 +2,7 @@
 const proyectos = [
     {
         nombre: 'Restaurante Casa Mía',
-        descripcion: 'Transformamos su presencia online con una web moderna y reservas automáticas.',
+        descripcion: 'Juan, dueño de un restaurante, ya no pierde tiempo gestionando reservas. Su Agente IA lo hace 24/7 por WhatsApp.',
         resultados: 'Aumento del 43% en reservas online en 3 meses.',
         imagen: '/proyectos/casamia.jpg',
     },
