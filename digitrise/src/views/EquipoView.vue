@@ -1,18 +1,17 @@
 <script setup lang="ts">
-// Aquí podrías importar el equipo desde un archivo JSON o composable si lo deseas
 const team = [
-    {
-        nombre: 'Alex Martín',
-        rol: 'Estrategia Digital',
-        frase: 'La innovación empieza con una buena idea ejecutada con pasión.',
-        imagen: '',
-    },
-    {
-        nombre: 'Arnau Gallardo',
-        rol: 'Desarrollo Web, IA y Automatización',
-        frase: 'Cada línea de código es una oportunidad para mejorar el mundo. La IA no reemplaza personas, potencia su creatividad.',
-        imagen: '/imgEquipo/fotoGallardo.jpg',
-    },
+  {
+    nombre: 'Alex Martín',
+    rol: 'Estrategia Digital',
+    frase: 'Creamos DigitRise para impulsar a marcas con visión, usando la tecnología como aliada.',
+    imagen: '/imgEquipo/fotoAlex.jpg',
+  },
+  {
+    nombre: 'Arnau Gallardo',
+    rol: 'Desarrollo Web, IA y Automatización',
+    frase: 'Creemos que la inteligencia artificial no reemplaza personas: potencia su creatividad y resultados.',
+    imagen: '/imgEquipo/fotoGallardo.jpg',
+  },
 ]
 </script>
 
@@ -20,7 +19,12 @@ const team = [
     <section class="equipo">
         <h1 class="tituloGrande">Conoce al equipo</h1>
 
-        <p class="texto">Somos los fundadores de <strong>DigitRise</strong> y esta es nuestra misión.</p>
+        <p class="texto">
+            Somos <strong>Alex</strong> y <strong>Arnau</strong>, cofundadores de <strong>DigitRise</strong>.
+            Iniciamos este proyecto con la convicción de que la <strong>inteligencia artificial</strong> y la <strong>automatización</strong>
+            deben estar al servicio de las ideas con visión y los negocios con propósito.
+            Con una mentalidad innovadora y una visión fresca, apostamos por un enfoque estratégico para hacer que lo digital genere verdadero impacto.
+        </p>
 
         <div class="miembros">
             <div v-for="persona in team" :key="persona.nombre" class="miembro">
