@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '../supabase'
-import bcrypt from 'bcryptjs'
 
 const router = useRouter()
 const nombre = ref('')
@@ -15,44 +14,18 @@ async function register() {
   message.value = ''
   isError.value = false
 
-  // Crear el usuario en Supabase Auth
-  const { data, error } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email: email.value,
     password: password.value,
     options: {
       data: {
-        name: nombre.value,
+        name: nombre.value, // Puedes guardar el nombre como metadata opcional
       },
     },
   })
 
   if (error) {
     message.value = 'Error al registrarse: ' + error.message
-    isError.value = true
-    return
-  }
-
-  const user = data.user
-  if (!user) {
-    message.value = 'No se pudo completar el registro.'
-    isError.value = true
-    return
-  }
-
-  // Hashear la contraseña antes de guardarla
-  const hashedPassword = await bcrypt.hash(password.value, 10)
-
-  // Guardar los datos en tu tabla personalizada 'users'
-  const { error: insertError } = await supabase.from('users').insert({
-    id: user.id,
-    name: nombre.value,
-    email: email.value,
-    hashed_password: hashedPassword, // ⚠️ ¡Nunca guardes la original!
-    last_login: new Date().toISOString(),
-  })
-
-  if (insertError) {
-    message.value = 'Error al guardar en la base de datos: ' + insertError.message
     isError.value = true
     return
   }
