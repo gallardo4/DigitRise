@@ -38,17 +38,17 @@ async function login() {
     .eq('id', user.id)
     .single()
 
+  // Si ocurre un error distinto a "no encontrado", mostrarlo
   if (selectError && selectError.code !== 'PGRST116') {
     message.value = 'Error verificando usuario: ' + selectError.message
     isError.value = true
     return
   }
 
-  // Insertar perfil si no existe
   if (!existingUser) {
     const { error: insertError } = await supabase.from('users').insert({
       id: user.id,
-      name: user.user_metadata?.name ?? '', // o puedes pedirlo después
+      name: user.user_metadata?.name ?? '',
       email: user.email,
       last_login: new Date().toISOString(),
     })
@@ -59,15 +59,17 @@ async function login() {
       return
     }
   } else {
-    // Solo actualizar el login si ya existía
-    await supabase
+    const { error: updateError } = await supabase
       .from('users')
       .update({ last_login: new Date().toISOString() })
       .eq('id', user.id)
+
+    if (updateError) {
+      console.error('Error al actualizar el último login:', updateError.message)
+    }
   }
 
   message.value = 'Sesión iniciada con éxito. Redirigiendo...'
-
   setTimeout(() => {
     router.push('/')
   }, 200)
