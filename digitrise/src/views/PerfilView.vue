@@ -1,27 +1,46 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '../supabase'
 
 const router = useRouter()
-
-// Define el usuario con propiedades obligatorias, pero permitiendo null
 const user = ref<{ email: string | null; name: string | null } | null>(null)
 
-onMounted(async () => {
+const checkSession = async () => {
   const { data } = await supabase.auth.getSession()
 
-  // Si no hay sesión, redirige al login
   if (!data.session) {
+    user.value = null
     router.push('/login')
   } else {
     const { user: sessionUser } = data.session
-
     user.value = {
       email: sessionUser.email ?? null,
       name: sessionUser.user_metadata?.name ?? null,
     }
   }
+}
+
+onMounted(async () => {
+  await checkSession()
+
+  // Escuchar cambios de autenticación (inicio/cierre de sesión)
+  const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
+    if (!session) {
+      user.value = null
+      router.push('/login')
+    } else {
+      user.value = {
+        email: session.user.email ?? null,
+        name: session.user.user_metadata?.name ?? null,
+      }
+    }
+  })
+
+  // Limpieza del listener al desmontar
+  onBeforeUnmount(() => {
+    authListener.subscription.unsubscribe()
+  })
 })
 </script>
 
