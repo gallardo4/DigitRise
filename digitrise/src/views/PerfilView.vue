@@ -7,6 +7,7 @@ const router = useRouter()
 const loading = ref(true)
 const user = ref<{ email: string | null; name: string | null } | null>(null)
 let authUnsub: (() => void) | null = null
+let fallbackTimer: number | null = null  // <-- NUEVO
 
 function setFromSession(session: Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']) {
   if (!session) {
@@ -20,17 +21,20 @@ function setFromSession(session: Awaited<ReturnType<typeof supabase.auth.getSess
 }
 
 onMounted(async () => {
-  // 1) Suscríbete antes para captar INITIAL_SESSION
+  // Suscríbete primero para captar INITIAL_SESSION
   const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
     // console.log('[perfil] auth event:', event, !!session)
     if (event === 'INITIAL_SESSION') {
+      if (fallbackTimer) clearTimeout(fallbackTimer)          // <-- NUEVO
       setFromSession(session)
       loading.value = false
       if (!session) router.replace('/login')
     } else if (event === 'SIGNED_IN') {
+      if (fallbackTimer) clearTimeout(fallbackTimer)          // <-- NUEVO
       setFromSession(session)
-      loading.value = false  // <-- importante!
+      loading.value = false
     } else if (event === 'SIGNED_OUT') {
+      if (fallbackTimer) clearTimeout(fallbackTimer)          // <-- NUEVO
       user.value = null
       loading.value = false
       router.replace('/login')
@@ -38,16 +42,27 @@ onMounted(async () => {
   })
   authUnsub = () => listener.subscription.unsubscribe()
 
-  // 2) Estado inicial (por si ya está disponible)
+  // Estado inicial (si ya está disponible)
   const { data, error } = await supabase.auth.getSession()
   if (error) console.error('getSession error:', error.message)
   if (data.session) {
     setFromSession(data.session)
     loading.value = false
+  } else {
+    // 🔁 Fallback: si en 1500ms no llega INITIAL_SESSION, actuar como "sin sesión"
+    fallbackTimer = window.setTimeout(() => {
+      if (loading.value) {
+        loading.value = false
+        router.replace('/login')
+      }
+    }, 1500)
   }
 })
 
-onBeforeUnmount(() => authUnsub?.())
+onBeforeUnmount(() => {
+  authUnsub?.()
+  if (fallbackTimer) clearTimeout(fallbackTimer)
+})
 </script>
 
 <template>

@@ -46,20 +46,14 @@ const toggleMenu = () => {
 async function signOut() {
   try {
     const { error } = await supabase.auth.signOut()
-    if (error) throw error
-    // Normalmente llegará SIGNED_OUT y el listener hará router.replace('/login')
-    // Pero por si acaso, forzamos navegación si en ~1s no ha pasado nada.
-    setTimeout(() => {
-      if (user.value) return // el listener ya actualizó user -> no forzar
-      router.replace('/login')
-    }, 1000)
+    if (error) console.warn('signOut error:', error.message)
   } catch (e: any) {
     console.error('Error al cerrar sesión:', e?.message ?? e)
-    // fallback duro si signOut falla
-    router.replace('/login')
   } finally {
     user.value = null
     isMenuOpen.value = false
+    // Fuerza navegación aunque el evento SIGNED_OUT no llegue en el webview
+    router.replace('/login')
   }
 }
 </script>
