@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { supabase } from '../supabase'
 
 const router = useRouter()
+const route = useRoute()
 
 const email = ref('')
 const password = ref('')
@@ -30,6 +31,8 @@ async function login() {
     if (error) {
       isError.value = true
       message.value = 'Error al iniciar sesión: ' + error.message
+      // opcional: limpiar password por UX
+      password.value = ''
       return
     }
     if (!data?.user) {
@@ -40,11 +43,13 @@ async function login() {
 
     message.value = 'Sesión iniciada con éxito. Redirigiendo...'
 
-    // 🔑 No bloquees el hilo esperando a la navegación
-    // Libera el botón y navega en segundo plano
+    // Redirige a la ruta original si venías de una protegida
+    const redirect = (route.query.redirect as string) || '/'
+
+    // Libera el botón y navega sin bloquear el hilo
     isSubmitting.value = false
     await nextTick()
-    router.replace('/').catch((err) => {
+    router.replace(redirect).catch((err) => {
       console.warn('[login] router.replace error:', err)
     })
   } catch (e: any) {

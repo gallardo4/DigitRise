@@ -1088,6 +1088,13 @@ textarea:not(:placeholder-shown)+label {
   margin-top: -0.5rem;
 }
 
+.cargando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .containerPerfil {
     margin-left: 2rem;
