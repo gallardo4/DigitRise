@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import { ref, watch, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { supabase } from '../supabase'
 import type { User } from '@supabase/supabase-js'
 
@@ -8,15 +8,31 @@ const router = useRouter()
 
 const isMenuOpen = ref(false)
 const user = ref<User | null>(null)
+let authUnsub: (() => void) | null = null
 
-async function checkSession() {
-  const { data } = await supabase.auth.getSession()
-  user.value = data.session?.user ?? null
-}
-checkSession()
+onMounted(async () => {
+  // Suscríbete primero para capturar INITIAL_SESSION
+  const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+    // console.log('[header] auth event:', event, !!session)
+    if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
+      user.value = session?.user ?? null
+    } else if (event === 'SIGNED_OUT') {
+      user.value = null
+      router.replace('/login')
+    }
+  })
+  authUnsub = () => listener.subscription.unsubscribe()
 
-supabase.auth.onAuthStateChange((_event, session) => {
-  user.value = session?.user ?? null
+  // Estado inicial por si ya está disponible sin esperar al evento
+  const { data, error } = await supabase.auth.getSession()
+  if (error) console.error('getSession error:', error.message)
+  if (data.session) {
+    user.value = data.session.user
+  }
+})
+
+onBeforeUnmount(() => {
+  authUnsub?.()
 })
 
 watch(isMenuOpen, (open) => {
@@ -28,29 +44,24 @@ const toggleMenu = () => {
 }
 
 async function signOut() {
-  await supabase.auth.signOut()
-  user.value = null
-  isMenuOpen.value = false
-  router.push('/login')
-}
-
-onMounted(() => {
-  const header = document.querySelector('.header')
-  let lastScrollTop = window.scrollY
-
-  const onScroll = () => {
-    const currentScroll = window.scrollY
-    if (currentScroll > lastScrollTop && currentScroll > 80) {
-      header?.classList.add('hide-on-scroll')
-    } else {
-      header?.classList.remove('hide-on-scroll')
-    }
-    lastScrollTop = Math.max(currentScroll, 0)
+  try {
+    const { error } = await supabase.auth.signOut()
+    if (error) throw error
+    // Normalmente llegará SIGNED_OUT y el listener hará router.replace('/login')
+    // Pero por si acaso, forzamos navegación si en ~1s no ha pasado nada.
+    setTimeout(() => {
+      if (user.value) return // el listener ya actualizó user -> no forzar
+      router.replace('/login')
+    }, 1000)
+  } catch (e: any) {
+    console.error('Error al cerrar sesión:', e?.message ?? e)
+    // fallback duro si signOut falla
+    router.replace('/login')
+  } finally {
+    user.value = null
+    isMenuOpen.value = false
   }
-
-  window.addEventListener('scroll', onScroll)
-  onUnmounted(() => window.removeEventListener('scroll', onScroll))
-})
+}
 </script>
 
 <template>

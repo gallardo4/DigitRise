@@ -1,78 +1,60 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '../supabase'
 
 const router = useRouter()
+
 const email = ref('')
 const password = ref('')
 const message = ref('')
 const isError = ref(false)
+const isSubmitting = ref(false)
 
 async function login() {
+  if (isSubmitting.value) return
+  isSubmitting.value = true
   message.value = ''
   isError.value = false
 
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email.value,
-    password: password.value,
-  })
+  console.debug('[login] submit', { email: email.value })
 
-  if (error) {
-    message.value = 'Error al iniciar sesión: ' + error.message
-    isError.value = true
-    return
-  }
-
-  const user = data.user
-  if (!user) {
-    message.value = 'No se pudo obtener el usuario.'
-    isError.value = true
-    return
-  }
-
-  // Verificar si el perfil ya existe
-  const { data: existingUser, error: selectError } = await supabase
-    .from('users')
-    .select('id')
-    .eq('id', user.id)
-    .single()
-
-  // Si ocurre un error distinto a "no encontrado", mostrarlo
-  if (selectError && selectError.code !== 'PGRST116') {
-    message.value = 'Error verificando usuario: ' + selectError.message
-    isError.value = true
-    return
-  }
-
-  if (!existingUser) {
-    const { error: insertError } = await supabase.from('users').insert({
-      id: user.id,
-      name: user.user_metadata?.name ?? '',
-      email: user.email,
-      last_login: new Date().toISOString(),
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email.value.trim(),
+      password: password.value,
     })
 
-    if (insertError) {
-      message.value = 'Error al crear el perfil: ' + insertError.message
+    console.debug('[login] signIn result', { data, error })
+
+    if (error) {
       isError.value = true
+      message.value = 'Error al iniciar sesión: ' + error.message
       return
     }
-  } else {
-    const { error: updateError } = await supabase
-      .from('users')
-      .update({ last_login: new Date().toISOString() })
-      .eq('id', user.id)
-
-    if (updateError) {
-      console.error('Error al actualizar el último login:', updateError.message)
+    if (!data?.user) {
+      isError.value = true
+      message.value = 'No se pudo obtener el usuario.'
+      return
     }
-  }
 
-  message.value = 'Sesión iniciada con éxito. Redirigiendo...'
-  setTimeout(() => {
-    router.push('/')
-  }, 200)
+    message.value = 'Sesión iniciada con éxito. Redirigiendo...'
+
+    // 🔑 No bloquees el hilo esperando a la navegación
+    // Libera el botón y navega en segundo plano
+    isSubmitting.value = false
+    await nextTick()
+    router.replace('/').catch((err) => {
+      console.warn('[login] router.replace error:', err)
+    })
+  } catch (e: any) {
+    console.error('[login] unexpected error', e)
+    isError.value = true
+    message.value = 'Ha ocurrido un error inesperado. Inténtalo de nuevo.'
+  } finally {
+    // Salvaguarda por si algo falló antes de liberar
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -96,7 +78,9 @@ async function login() {
           <label for="password">Contraseña</label>
         </div>
 
-        <button type="submit" class="btn" onclick="this.blur()">Iniciar Sesión</button>
+        <button type="submit" class="btn" :disabled="isSubmitting" onclick="this.blur()">
+          {{ isSubmitting ? 'Entrando...' : 'Iniciar Sesión' }}
+        </button>
 
         <p v-if="message" :class="['form-message', isError ? 'error' : 'success']">
           {{ message }}

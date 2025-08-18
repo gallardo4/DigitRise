@@ -4,51 +4,60 @@ import { useRouter } from 'vue-router'
 import { supabase } from '../supabase'
 
 const router = useRouter()
+const loading = ref(true)
 const user = ref<{ email: string | null; name: string | null } | null>(null)
+let authUnsub: (() => void) | null = null
 
-const checkSession = async () => {
-  const { data } = await supabase.auth.getSession()
-
-  if (!data.session) {
+function setFromSession(session: Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']) {
+  if (!session) {
     user.value = null
-    router.push('/login')
   } else {
-    const { user: sessionUser } = data.session
     user.value = {
-      email: sessionUser.email ?? null,
-      name: sessionUser.user_metadata?.name ?? null,
+      email: session.user.email ?? null,
+      name: session.user.user_metadata?.name ?? null,
     }
   }
 }
 
 onMounted(async () => {
-  await checkSession()
-
-  // Escuchar cambios de autenticación (inicio/cierre de sesión)
-  const { data: authListener } = supabase.auth.onAuthStateChange((_event, session) => {
-    if (!session) {
+  // 1) Suscríbete antes para captar INITIAL_SESSION
+  const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+    // console.log('[perfil] auth event:', event, !!session)
+    if (event === 'INITIAL_SESSION') {
+      setFromSession(session)
+      loading.value = false
+      if (!session) router.replace('/login')
+    } else if (event === 'SIGNED_IN') {
+      setFromSession(session)
+      loading.value = false  // <-- importante!
+    } else if (event === 'SIGNED_OUT') {
       user.value = null
-      router.push('/login')
-    } else {
-      user.value = {
-        email: session.user.email ?? null,
-        name: session.user.user_metadata?.name ?? null,
-      }
+      loading.value = false
+      router.replace('/login')
     }
   })
+  authUnsub = () => listener.subscription.unsubscribe()
 
-  // Limpieza del listener al desmontar
-  onBeforeUnmount(() => {
-    authListener.subscription.unsubscribe()
-  })
+  // 2) Estado inicial (por si ya está disponible)
+  const { data, error } = await supabase.auth.getSession()
+  if (error) console.error('getSession error:', error.message)
+  if (data.session) {
+    setFromSession(data.session)
+    loading.value = false
+  }
 })
+
+onBeforeUnmount(() => authUnsub?.())
 </script>
 
 <template>
   <section class="perfil">
-    <div class="containerPerfil" v-if="user">
-      <h1 class="tituloGrande">Mi Perfil</h1>
+    <div v-if="loading" class="cargando">
+      <p>Cargando datos de usuario...</p>
+    </div>
 
+    <div v-else-if="user" class="containerPerfil">
+      <h1 class="tituloGrande">Mi Perfil</h1>
       <div class="perfil-info">
         <p class="texto"><strong>Nombre:</strong> {{ user.name || 'No especificado' }}</p>
         <p class="texto"><strong>Email:</strong> {{ user.email }}</p>
@@ -56,7 +65,7 @@ onMounted(async () => {
     </div>
 
     <div v-else class="cargando">
-      <p>Cargando datos de usuario...</p>
+      <p>No hay sesión iniciada.</p>
     </div>
   </section>
 </template>
