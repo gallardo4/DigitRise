@@ -18,23 +18,19 @@ async function login() {
   message.value = ''
   isError.value = false
 
-  console.debug('[login] submit', { email: email.value })
-
   try {
     const { data, error } = await supabase.auth.signInWithPassword({
       email: email.value.trim(),
       password: password.value,
     })
 
-    console.debug('[login] signIn result', { data, error })
-
     if (error) {
       isError.value = true
       message.value = 'Error al iniciar sesión: ' + error.message
-      // opcional: limpiar password por UX
-      password.value = ''
+      password.value = '' // UX: limpiar campo
       return
     }
+
     if (!data?.user) {
       isError.value = true
       message.value = 'No se pudo obtener el usuario.'
@@ -43,21 +39,15 @@ async function login() {
 
     message.value = 'Sesión iniciada con éxito. Redirigiendo...'
 
-    // Redirige a la ruta original si venías de una protegida
+    // Redirige a la ruta original o al home
     const redirect = (route.query.redirect as string) || '/'
-
-    // Libera el botón y navega sin bloquear el hilo
     isSubmitting.value = false
     await nextTick()
-    router.replace(redirect).catch((err) => {
-      console.warn('[login] router.replace error:', err)
-    })
-  } catch (e: any) {
-    console.error('[login] unexpected error', e)
+    router.replace(redirect).catch(() => {})
+  } catch {
     isError.value = true
     message.value = 'Ha ocurrido un error inesperado. Inténtalo de nuevo.'
   } finally {
-    // Salvaguarda por si algo falló antes de liberar
     isSubmitting.value = false
   }
 }
@@ -67,10 +57,7 @@ async function login() {
   <section class="login">
     <div class="containerLogin">
       <h1 class="tituloGrande">Inicio de Sesión</h1>
-
-      <p class="texto">
-        <strong>Inicia sesión para seguir explorando.</strong>
-      </p>
+      <p class="texto"><strong>Inicia sesión para seguir explorando.</strong></p>
 
       <form @submit.prevent="login" class="formulario">
         <div class="inputGroup">
@@ -94,16 +81,12 @@ async function login() {
 
       <p class="texto">
         ¿Olvidaste tu contraseña?
-        <RouterLink to="/reset-password" class="resetPasswordBtn">
-          <strong>Restablecer aquí</strong>
-        </RouterLink>
+        <RouterLink to="/reset-password" class="resetPasswordBtn"><strong>Restablecer aquí</strong></RouterLink>
       </p>
 
       <p class="texto">
         ¿Todavía no tienes cuenta?
-        <RouterLink to="/register" class="registerBtn">
-          <strong>Regístrate aquí</strong>
-        </RouterLink>
+        <RouterLink to="/register" class="registerBtn"><strong>Regístrate aquí</strong></RouterLink>
       </p>
     </div>
   </section>
