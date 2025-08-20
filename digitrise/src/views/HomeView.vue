@@ -1,5 +1,11 @@
 <template>
   <section class="home">
+    <div class="divLinkContact">
+      <RouterLink to="/contacto" class="linkContact">
+        <button class="btnContactMovil" onclick="this.blur()">Contáctanos</button>
+      </RouterLink>
+    </div>
+
     <div class="hero">
       <h1 class="tituloGrande"><span class="textoColor">Potencia tu negocio</span> con agentes de IA personalizados</h1>
       <p class="texto">

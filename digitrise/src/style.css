@@ -121,6 +121,7 @@ main {
   cursor: pointer;
 }
 
+/* NAV - desktop */
 .nav {
   display: flex;
   gap: 2rem;
@@ -166,6 +167,7 @@ main {
   width: 100%;
 }
 
+/* Botón contacto - visible en desktop, oculto en móvil */
 .btnContact {
   align-self: flex-start;
   padding: 0.5rem 1.25rem;
@@ -194,9 +196,10 @@ main {
   outline: none;
 }
 
+/* Hamburguesa - oculta en desktop, visible en móvil */
 .hamburger {
   margin-left: auto;
-  display: none;
+  display: none;            /* desktop: oculto */
   flex-direction: column;
   justify-content: space-between;
   width: 32px;
@@ -211,7 +214,7 @@ main {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: white;
+  background-color: #fff;   /* 3 líneas blancas */
   border-radius: 2px;
   transition: 0.3s ease;
 }
@@ -226,15 +229,6 @@ main {
 
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-6px);
-}
-
-.authButtons-mobile {
-  display: none;
-}
-
-.authButtons-desktop {
-  display: flex;
-  gap: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -254,12 +248,18 @@ main {
     max-width: 180px;
   }
 
+  /* Mostrar hamburguesa en móvil */
   .hamburger {
     display: flex;
     z-index: 1050;
   }
 
-  /* Nav cubre toda la pantalla cuando está abierto */
+  /* Ocultar botón de contacto en móvil */
+  .btnContact {
+    display: none;
+  }
+
+  /* Nav a pantalla completa cuando está abierto */
   .nav {
     position: fixed;
     top: 0;
@@ -297,19 +297,8 @@ main {
 
   .nav-link:hover,
   .nav-link:focus {
-    color: white;
+    color: #fff;
     outline: none;
-  }
-
-  .authButtons-desktop {
-    display: none;
-  }
-
-  .authButtons-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 1rem;
   }
 
   /* Evita scroll detrás del menú */
@@ -324,6 +313,44 @@ main {
   margin-top: 3rem;
   padding: 2rem 1rem;
   color: #1f2937;
+}
+
+.divLinkContact {
+  display: flex;
+  justify-content: center;
+}
+
+.linkContact {
+  text-decoration: none;
+}
+
+.btnContactMovil {
+  display: none; /* Oculto por defecto, visible en móvil */
+  align-self: flex-start;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 2px solid #ffffff;
+  border-radius: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btnContactMovil:hover,
+.btnContactMovil:focus {
+  background-color: #fff;
+  color: #131047;
+  outline: none;
 }
 
 .tituloGrande {
@@ -369,6 +396,11 @@ main {
 }
 
 @media (max-width: 768px) {
+  .btnContactMovil {
+    display: block; /* Visible en móvil */
+    text-align: center;
+  }
+
   .tituloGrande {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
     text-align: left;
