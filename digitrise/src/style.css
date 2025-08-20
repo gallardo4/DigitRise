@@ -790,6 +790,36 @@ textarea:not(:placeholder-shown)+label {
   font-family: var(--font-faimily-rights);
 }
 
+@media (max-width: 768px) {
+  .containerFooter {
+    flex-direction: column;   /* en columna */
+    align-items: center;      /* centra horizontalmente */
+    justify-content: center;  /* centra verticalmente */
+    text-align: center;       /* centra el texto */
+    height: auto;             /* que crezca según contenido */
+    gap: 2rem;                /* espacio entre bloques */
+    margin-bottom: 0;         /* quita el margen negativo */
+  }
+
+  .footer1, .footer2, .footer3, .footer4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-link-footer {
+    text-align: center; /* asegura que los links se centren */
+  }
+
+  .social-link {
+    margin: 0 auto; /* centra iconos sociales */
+    display: block;
+  }
+
+  .rights {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
 @media (max-width: 480px) {
 
   input,
