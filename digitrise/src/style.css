@@ -790,10 +790,6 @@ textarea:not(:placeholder-shown)+label {
   font-family: var(--font-faimily-rights);
 }
 
-@media (max-width: 768px) {
-  
-}
-
 @media (max-width: 480px) {
 
   input,
