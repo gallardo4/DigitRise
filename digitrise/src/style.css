@@ -57,6 +57,29 @@ main {
   }
 }
 
+/* VOLVER */
+
+.volver {
+  text-transform: uppercase;
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #fff;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.volver:hover {
+  color: #a5b4fc;
+}
+
+/* COLOR DE TEXTO */
+
+.textoColor {
+  color: var(--color-secondary);
+}
+
 /* LAYOUT */
 
 .layout {
@@ -310,6 +333,8 @@ main {
   font-weight: 900;
   letter-spacing: 1px;
   user-select: none;
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 .hero {
@@ -327,7 +352,7 @@ main {
   color: #fff;
   line-height: 1.8;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1rem 0;
   font-weight: 500;
   user-select: none;
 }
@@ -380,27 +405,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.agente-card {
-  cursor: pointer;
-  border-radius: 12px;
-  border: 2px solid var(--color-primary);
-  overflow: hidden;
-  outline: none;
-  text-decoration: none;
-}
-
-.tituloLittle {
-  font-size: 20px;
-  color: var(--color-primary);
-  margin-top: -0.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  user-select: none;
-  text-shadow: 0 2px 4px rgba(79, 70, 229, 0.25);
-}
-
 /* AGENTE DETALLE */
 
 .detalle-container {
@@ -410,17 +414,6 @@ main {
   text-align: left;
 }
 
-.volver {
-  text-transform: uppercase;
-  font-size: 20px;
-  display: inline-block;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  color: #4f46e5;
-  user-select: none;
-}
-
-
 .detalle-img {
   width: 100%;
   max-width: 300px;
@@ -428,20 +421,6 @@ main {
   object-fit: cover;
   border-radius: 1rem;
   margin: 1rem auto;
-}
-
-.tituloGrande {
-  font-size: 2rem;
-  margin-top: 1rem;
-}
-
-.tituloLittle {
-  font-size: 1.3rem;
-  margin: 0.5rem 0;
-}
-
-.texto {
-  margin: 1rem 0;
 }
 
 .info-detalle {
@@ -457,11 +436,11 @@ main {
 /* AGENTE CARD */
 
 .agente-card {
-  background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   padding: 20px;
   text-align: center;
+  text-decoration: none;
 }
 
 .agente-card img {
@@ -470,9 +449,12 @@ main {
   margin-bottom: 15px;
 }
 
-.agente-card h3 {
-  font-size: 1.1em;
-  margin-bottom: 10px;
+.agente-card h2 {
+  transition: color 0.3s ease;
+}
+
+.agente-card h2:hover {
+  color: var(--color-secondary);
 }
 
 @media (max-width: 600px) {
@@ -700,7 +682,6 @@ textarea:not(:placeholder-shown)+label {
 
 .footer {
   background: linear-gradient(to bottom, #000, #131047);
-  color: #f0f0f0;
   padding: 2.5rem 1.5rem;
   margin-top: 5rem;
 }

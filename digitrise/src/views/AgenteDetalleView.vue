@@ -17,7 +17,7 @@ const agente = computed(() =>
         <h1 class="tituloGrande">{{ agente.nombre }}</h1>
         <img :src="agente.img" :alt="agente.nombre" class="detalle-img" />
 
-        <h2 class="tituloLittle">{{ agente.titulo }}</h2>
+        <h2 class="tituloGrande">{{ agente.titulo }}</h2>
         <p class="texto">{{ agente.descripcion }}</p>
 
         <ul class="info-detalle">
