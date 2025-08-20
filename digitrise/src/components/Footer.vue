@@ -5,9 +5,9 @@
 
       <div class="footer-main">
         <RouterLink to="/">
-          <img src="/logo.svg" alt="DigitRise Logo" class="logoFooter" />
+          <img src="/logoFooter.svg" alt="DigitRise Logo" class="logoFooter" />
         </RouterLink>
-        <p>&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
+        <p class="texto">&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
       </div>
 
       <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram" class="social-link">

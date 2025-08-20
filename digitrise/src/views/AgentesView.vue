@@ -5,7 +5,7 @@ import { agentes } from '../assets/data/agentes.js'
 
 <template>
   <section class="agentes-container">
-    <h1 class="tituloGrande">Catálogo de Agentes IA</h1>
+    <h1 class="tituloGrande">Conoce a nuestros agentes</h1>
 
     <div class="grid-agentes">
       <router-link v-for="agente in agentes" :key="agente.id" :to="`/agente/${agente.id}`" class="agente-card">

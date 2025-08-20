@@ -3,9 +3,8 @@ import './style.css'
 import App from './App.vue'
 // @ts-ignore
 import router from './router'
-import { supabase } from './supabase' // cliente único
 
-// === Forzar canónico SOLO en producción (no en localhost) ===
+// Forzar dominio canónico SOLO en producción (opcional; mantengo tu lógica)
 if (typeof window !== 'undefined' && !import.meta.env.DEV) {
   const CANONICAL = 'digitrise.net'
   const host = location.hostname
@@ -16,16 +15,6 @@ if (typeof window !== 'undefined' && !import.meta.env.DEV) {
     url.hostname = CANONICAL
     location.replace(url.toString())
   }
-}
-
-// === DEBUG: en desarrollo, expón siempre window.supabase y loguea estado ===
-if (import.meta.env.DEV) {
-  // @ts-expect-error attach for debugging
-  window.supabase = supabase
-  console.log('[dev] origin:', location.origin)
-  supabase.auth.getSession().then(({ data }) => {
-    console.log('[dev] initial session?', !!data?.session)
-  })
 }
 
 const app = createApp(App)

@@ -1,39 +1,7 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
-import { supabase } from '../supabase'
-import type { User } from '@supabase/supabase-js'
-
-const router = useRouter()
+import { ref, watch } from 'vue'
 
 const isMenuOpen = ref(false)
-const user = ref<User | null>(null)
-let authUnsub: (() => void) | null = null
-
-onMounted(async () => {
-  // Suscríbete primero para capturar INITIAL_SESSION
-  const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
-    // console.log('[header] auth event:', event, !!session)
-    if (event === 'INITIAL_SESSION' || event === 'SIGNED_IN') {
-      user.value = session?.user ?? null
-    } else if (event === 'SIGNED_OUT') {
-      user.value = null
-      router.replace('/login')
-    }
-  })
-  authUnsub = () => listener.subscription.unsubscribe()
-
-  // Estado inicial por si ya está disponible sin esperar al evento
-  const { data, error } = await supabase.auth.getSession()
-  if (error) console.error('getSession error:', error.message)
-  if (data.session) {
-    user.value = data.session.user
-  }
-})
-
-onBeforeUnmount(() => {
-  authUnsub?.()
-})
 
 watch(isMenuOpen, (open) => {
   document.body.classList.toggle('menu-open', open)
@@ -42,26 +10,12 @@ watch(isMenuOpen, (open) => {
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
-
-async function signOut() {
-  try {
-    const { error } = await supabase.auth.signOut()
-    if (error) console.warn('signOut error:', error.message)
-  } catch (e: any) {
-    console.error('Error al cerrar sesión:', e?.message ?? e)
-  } finally {
-    user.value = null
-    isMenuOpen.value = false
-    // Fuerza navegación aunque el evento SIGNED_OUT no llegue en el webview
-    router.replace('/login')
-  }
-}
 </script>
 
 <template>
   <header class="header">
     <div class="containerHeader">
-      <RouterLink to="/"><img src="/logoGrande.svg" alt="DigitRise Logo" class="logoHeader" /></RouterLink>
+      <RouterLink to="/"><img src="/logoGrandeHeader.svg" alt="DigitRise Logo" class="logoHeader" /></RouterLink>
 
       <button class="hamburger" :class="{ open: isMenuOpen }" @click="toggleMenu" aria-label="Abrir menú">
         <span></span>
@@ -74,28 +28,9 @@ async function signOut() {
         <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes IA</RouterLink>
         <RouterLink to="/proyectos" class="nav-link" @click="isMenuOpen = false">Proyectos</RouterLink>
         <RouterLink to="/equipo" class="nav-link" @click="isMenuOpen = false">Equipo</RouterLink>
-        <RouterLink to="/contacto" class="nav-link" @click="isMenuOpen = false">Contacto</RouterLink>
-
-        <div class="authButtons-mobile" v-if="!user">
-          <RouterLink to="/login"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
-          <RouterLink to="/register"><button class="btnHeaderRegisterPhone" @click="isMenuOpen = false" onclick="this.blur()">Registrarse</button></RouterLink>
-        </div>
-
-        <div class="authButtons-mobile" v-else>
-          <RouterLink to="/perfil"><button class="btnHeaderLoginPhone" @click="isMenuOpen = false" onclick="this.blur()">Perfil</button></RouterLink>
-          <button class="btnHeaderRegisterPhone" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
-        </div>
       </nav>
-
-      <div class="authButtons-desktop" v-if="!user">
-        <RouterLink to="/login"><button class="btnHeaderLogin" onclick="this.blur()">Iniciar Sesión</button></RouterLink>
-        <RouterLink to="/register"><button class="btnHeaderRegister" onclick="this.blur()">Registrarse</button></RouterLink>
-      </div>
-
-      <div class="authButtons-desktop" v-else>
-        <RouterLink to="/perfil"><button class="btnHeaderLogin" onclick="this.blur()">Perfil</button></RouterLink>
-        <button class="btnHeaderSignout" @click="signOut" onclick="this.blur()">Cerrar Sesión</button>
-      </div>
+      
+      <RouterLink to="/contacto"><button class="btnContact" onclick="this.blur()">Contáctanos</button></RouterLink>
     </div>
   </header>
 </template>
