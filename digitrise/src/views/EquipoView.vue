@@ -29,7 +29,7 @@ const team = [
         <div class="miembros">
             <div v-for="persona in team" :key="persona.nombre" class="miembro">
                 <img :src="persona.imagen" :alt="persona.nombre" class="foto" />
-                <h3 class="tituloLittle">{{ persona.nombre }}</h3>
+                <h3 class="tituloGrande">{{ persona.nombre }}</h3>
                 <p class="texto"><strong>{{ persona.rol }}</strong></p>
                 <blockquote class="texto">{{ persona.frase }}</blockquote>
             </div>
