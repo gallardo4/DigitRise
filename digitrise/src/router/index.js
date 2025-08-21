@@ -6,6 +6,8 @@ const routes = [
   { path: '/agente/:id', name: 'agenteDetalle', component: () => import('../views/AgenteDetalleView.vue') },
   { path: '/equipo', name: 'equipo', component: () => import('../views/EquipoView.vue') },
   { path: '/proyectos', name: 'proyectos', component: () => import('../views/ProyectosView.vue') },
+  { path: '/politica-privacidad', name: 'politica-privacidad', component: () => import('../views/PoliticaView.vue'), meta: { hideHeaderFooter: true } },
+  { path: '/terminos-condiciones', name: 'terminos-condiciones', component: () => import('../views/TerminosView.vue') },
 ]
 
 const router = createRouter({
