@@ -17,7 +17,7 @@ const team = [
 
 <template>
     <section class="equipo">
-        <h1 class="tituloGrande">Conoce al equipo</h1>
+        <h1 class="tituloGrande">Conoce al <span class="textoColor">equipo</span></h1>
 
         <p class="texto">
             Somos <strong>Alex</strong> y <strong>Arnau</strong>, cofundadores de <strong>DigitRise</strong>.
@@ -29,7 +29,7 @@ const team = [
         <div class="miembros">
             <div v-for="persona in team" :key="persona.nombre" class="miembro">
                 <img :src="persona.imagen" :alt="persona.nombre" class="foto" />
-                <h3 class="tituloGrande">{{ persona.nombre }}</h3>
+                <h3 class="tituloGrande"><span class="textoColor">{{ persona.nombre }}</span></h3>
                 <p class="texto"><strong>{{ persona.rol }}</strong></p>
                 <blockquote class="texto">{{ persona.frase }}</blockquote>
             </div>

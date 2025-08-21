@@ -1,9 +1,9 @@
 <template>
   <section class="home">
     <div class="divLinkContact">
-      <RouterLink to="/contacto" class="linkContact">
+      <a href="https://calendly.com/info-digitrise/30min" target="_blank" class="linkContact">
         <button class="btnContactMovil" onclick="this.blur()">Contáctanos</button>
-      </RouterLink>
+      </a>
     </div>
 
     <div class="hero">
@@ -27,7 +27,7 @@
       </div>
 
       <div>
-        <h3 class="tituloGrande">Equipo de <span class="textoColor">DigitRise</span></h3>
+        <h3 class="tituloGrande">Equipo de Digit<span class="textoColor">Rise</span></h3>
         <p class="texto">
           Conoce al equipo detrás de <strong>DigitRise</strong>, apasionados por la tecnología y la innovación. Estamos aquí para ayudarte a
           llevar tu negocio al siguiente nivel con soluciones de IA personalizadas.
@@ -41,7 +41,7 @@
           Elige entre una variedad de agentes IA entrenados para tareas como atención al cliente, ventas, soporte técnico
           y más. Personalízalos según tus necesidades y empieza a automatizar procesos hoy mismo.
         </p>
-        <RouterLink to="/contacto"><button class="btn" onclick="this.blur()">Habla con un experto</button></RouterLink>
+        <a href="https://calendly.com/info-digitrise/30min" target="_blank"><button class="btn" onclick="this.blur()">Habla con un experto</button></a>
       </div>
     </div>
   </section>

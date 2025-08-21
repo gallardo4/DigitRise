@@ -550,10 +550,7 @@ main {
 
 .proyecto {
   max-width: 365px;
-  border-radius: 12px;
-  border: 2px solid var(--color-primary);
   padding: 1rem;
-  background-color: white;
 }
 
 .proyecto img {
@@ -741,7 +738,6 @@ textarea:not(:placeholder-shown)+label {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  user-select: none;
 }
 
 .textoFooter {

@@ -42,9 +42,9 @@ const toggleMenu = () => {
       </nav>
 
       <!-- Botón de contacto (oculto en móvil) -->
-      <RouterLink to="/contacto">
+      <a href="https://calendly.com/info-digitrise/30min" target="_blank">
         <button class="btnContact" onclick="this.blur()">Contáctanos</button>
-      </RouterLink>
+      </a>
     </div>
   </header>
 </template>

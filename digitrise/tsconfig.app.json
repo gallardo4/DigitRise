@@ -7,11 +7,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-
-    /* Quita estas dos si las tenías:
-       "erasableSyntaxOnly": true,
-       "noUncheckedSideEffectImports": true
-       (requieren TS 5.5+) */
   },
   "include": [
     "src/**/*.ts",

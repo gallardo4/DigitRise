@@ -17,13 +17,12 @@ const proyectos = [
 
 <template>
     <section class="proyectos">
-        <h1 class="tituloGrande">Proyectos destacados</h1>
+        <h1 class="tituloGrande"><span class="textoColor">Proyectos</span> destacados</h1>
         <p class="texto">Soluciones reales para negocios reales.</p>
 
         <div class="lista-proyectos">
             <div v-for="proyecto in proyectos" :key="proyecto.nombre" class="proyecto">
-                <img :src="proyecto.imagen" :alt="proyecto.nombre" />
-                <h2 class="tituloLittle">{{ proyecto.nombre }}</h2>
+                <h2 class="tituloGrande"><span class="textoColor">{{ proyecto.nombre }}</span></h2>
                 <p class="texto">{{ proyecto.descripcion }}</p>
                 <p class="texto">
                     <strong>{{ proyecto.resultados }}</strong>
