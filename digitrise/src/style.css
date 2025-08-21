@@ -86,8 +86,8 @@ main {
 /* VOLVER */
 
 .volver {
-  text-transform: uppercase;
   font-size: 20px;
+  font-family: var(--font-family-secondary);
   display: inline-block;
   margin-bottom: 1rem;
   text-decoration: none;
