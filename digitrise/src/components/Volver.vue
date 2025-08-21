@@ -10,6 +10,6 @@ function volver() {
 
 <template>
   <button class="btnVolver" @click="volver">
-    🡠 Volver
+    Volver
   </button>
 </template>

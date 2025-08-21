@@ -728,16 +728,11 @@ textarea:not(:placeholder-shown)+label {
 
 @media (max-width: 768px) {
   .containerPolitica {
-    padding: 0 2rem;
-  }
-
-  .tituloPolitica {
-    font-size: 1.25rem;
+    padding: 0 1rem;
   }
 
   .textoPolitica {
     font-size: 0.95rem;
-    text-align: justify;
   }
 }
 
