@@ -716,7 +716,7 @@ textarea:not(:placeholder-shown)+label {
 }
 
 .containerFooter {
-  max-width: 1300px;
+  max-width: 1000px;
   height: 300px;
   margin: 0 auto;
   margin-bottom: -5rem;
