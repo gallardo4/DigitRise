@@ -700,6 +700,23 @@ textarea:not(:placeholder-shown)+label {
   outline: none;
 }
 
+/* Botones full-width en móvil */
+@media (max-width: 768px) {
+  .home .btn {
+    display: block;       /* asegura bloque */
+    width: 100%;          /* ocupa todo el ancho del contenedor */
+    align-self: stretch;  /* override del align-self base */
+    text-align: center;   /* texto centrado */
+    padding: 0.9rem 1.25rem; /* un poco menos de padding lateral para móvil */
+    margin: 0.75rem 0 0;  /* separa del texto anterior */
+  }
+
+  /* (Opcional) si hay varios botones seguidos, añade separación entre ellos */
+  .home .btn + .btn {
+    margin-top: 0.75rem;
+  }
+}
+
 /* POLÍTICA DE PRIVACIDAD */
 
 .containerPolitica {

@@ -13,7 +13,7 @@
         de tu empresa. Desde asistentes virtuales hasta soluciones de automatización, ponemos el poder de la IA al
         alcance de todos.
       </p>
-      <RouterLink to="/agentes"><button class="btn" onclick="this.blur()">Explora nuestros agentes</button></RouterLink>
+      <RouterLink class="linkContact" to="/agentes"><button class="btn" onclick="this.blur()">Explora nuestros agentes</button></RouterLink>
     </div>
 
     <div class="info-extra">
@@ -23,7 +23,7 @@
           Descubre cómo hemos ayudado a empresas como la tuya a transformar su presencia digital y optimizar sus procesos
           con nuestras soluciones de IA. Cada proyecto es una historia de éxito.
         </p>
-        <RouterLink to="/proyectos"><button class="btn" onclick="this.blur()">Descubre los proyectos</button></RouterLink>
+        <RouterLink class="linkContact" to="/proyectos"><button class="btn" onclick="this.blur()">Descubre los proyectos</button></RouterLink>
       </div>
 
       <div>
@@ -32,7 +32,7 @@
           Conoce al equipo detrás de <strong>DigitRise</strong>, apasionados por la tecnología y la innovación. Estamos aquí para ayudarte a
           llevar tu negocio al siguiente nivel con soluciones de IA personalizadas.
         </p>
-        <RouterLink to="/equipo"><button class="btn" onclick="this.blur()">Conoce al equipo</button></RouterLink>
+        <RouterLink class="linkContact" to="/equipo"><button class="btn" onclick="this.blur()">Conoce al equipo</button></RouterLink>
       </div>
 
       <div>
@@ -41,7 +41,7 @@
           Elige entre una variedad de agentes IA entrenados para tareas como atención al cliente, ventas, soporte técnico
           y más. Personalízalos según tus necesidades y empieza a automatizar procesos hoy mismo.
         </p>
-        <a href="https://calendly.com/info-digitrise/30min" target="_blank"><button class="btn" onclick="this.blur()">Habla con un experto</button></a>
+        <a href="https://calendly.com/info-digitrise/30min" target="_blank" class="linkContact"><button class="btn" onclick="this.blur()">Habla con un experto</button></a>
       </div>
     </div>
   </section>
