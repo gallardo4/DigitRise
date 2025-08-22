@@ -9,7 +9,7 @@ function volver() {
 </script>
 
 <template>
-  <button class="btnVolver" @click="volver">
+  <button @click="volver">
     Volver
   </button>
 </template>

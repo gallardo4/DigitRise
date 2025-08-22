@@ -6,7 +6,7 @@ import Volver from '../components/Volver.vue';
     <header class="header">
         <div class="containerHeader">
             <div>
-                <Volver />
+                <Volver class="btnVolver" />
             </div>
             <RouterLink to="/">
                 <img src="/logoGrandeHeader.svg" alt="DigitRise Logo" class="logoHeader" />
@@ -15,6 +15,10 @@ import Volver from '../components/Volver.vue';
     </header>
 
     <div class="containerPolitica">
+        <div>
+            <Volver class="btnVolverMovil" />
+        </div>
+
         <header>
             <h1 class="tituloGrande"><span class="textoColor">Política de Privacidad</span></h1>
             <p class="textoPolitica">Última actualización: 21 de agosto de 2025</p>
