@@ -37,7 +37,7 @@ const toggleMenu = () => {
       <nav id="main-nav" class="nav" :class="{ open: isMenuOpen }">
         <RouterLink to="/" class="nav-link" @click="isMenuOpen = false">Inicio</RouterLink>
         <RouterLink to="/agentes" class="nav-link" @click="isMenuOpen = false">Agentes IA</RouterLink>
-        <RouterLink to="/proyectos" class="nav-link" @click="isMenuOpen = false">Proyectos</RouterLink>
+        <RouterLink to="/proceso" class="nav-link" @click="isMenuOpen = false">Proceso</RouterLink>
         <RouterLink to="/equipo" class="nav-link" @click="isMenuOpen = false">Equipo</RouterLink>
       </nav>
 
