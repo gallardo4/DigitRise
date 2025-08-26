@@ -10,6 +10,7 @@ import { agentes } from '../assets/data/agentes.js'
       <router-link v-for="agente in agentes" :key="agente.id" :to="`/agentes/${agente.nombreUrl}`" class="agente-card">
         <img :src="agente.img" :alt="agente.nombre" />
         <h2 class="tituloGrande">{{ agente.nombre }}</h2>
+        <p class="texto">{{ agente.titulo }}</p>
       </router-link>
     </div>
   </section>

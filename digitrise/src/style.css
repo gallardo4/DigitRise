@@ -549,6 +549,11 @@ main {
   transition: color .25s ease;
 }
 
+.agente-card .texto {
+  font-family: var(--font-family-secondary);
+  margin: -1rem 1rem 1.25rem;
+}
+
 .agente-card:hover .tituloGrande {
   color: var(--color-secondary);
 }
