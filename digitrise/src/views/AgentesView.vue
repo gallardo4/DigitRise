@@ -7,7 +7,7 @@ import { agentes } from '../assets/data/agentes.js'
     <h1 class="tituloGrande">Conoce a nuestros <span class="textoColor">agentes</span></h1>
 
     <div class="grid-agentes">
-      <router-link v-for="agente in agentes" :key="agente.id" :to="`/agente/${agente.id}`" class="agente-card">
+      <router-link v-for="agente in agentes" :key="agente.id" :to="`/agentes/${agente.nombreUrl}`" class="agente-card">
         <img :src="agente.img" :alt="agente.nombre" />
         <h2 class="tituloGrande">{{ agente.nombre }}</h2>
       </router-link>

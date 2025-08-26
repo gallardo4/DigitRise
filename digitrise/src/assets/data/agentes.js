@@ -1,67 +1,74 @@
-
 export const agentes = [
     {
-        id: 1,
-        nombre: 'Agente Secretario',
-        titulo: 'Asistente virtual para agenda y recordatorios',
-        descripcion: 'Gestiona tu calendario, crea eventos y envía recordatorios automáticos.',
-        img: '/imgAgentes/robotagenda.jpg',
-        ventajas: ['Ahorra tiempo en tareas repetitivas', 'Mejora la puntualidad de los clientes']
+        "id": 1,
+        "nombre": "Kairos",
+        "nombreUrl": "kairos",
+        "titulo": "Asistente Secretario",
+        "descripcion": "Kairos es tu asistente virtual que entiende tus notas de voz o mensajes y gestiona tu agenda: crea, actualiza o elimina reuniones, confirma disponibilidad y te recuerda lo importante, todo con lenguaje natural.",
+        "img": "/imgAgentes/robotagenda.jpg",
+        "ventajas": [
+            "Interacción natural: funciona con mensajes escritos o notas de voz.",
+            "Automatización total: crea, actualiza o borra eventos sin abrir el calendario.",
+            "Disponibilidad continua: siempre accesible en WhatsApp.",
+            "Eficiencia: evita errores humanos como horarios duplicados o mal escritos.",
+            "Escalabilidad: puede ampliarse para más funciones (emails, recordatorios, coordinación).",
+            "Personalización: se adapta a tu forma de hablar y a tu flujo de trabajo."
+        ]
     },
     {
-        id: 2,
-        nombre: 'Chatbot eCommerce',
-        titulo: 'Atención al cliente 24/7 para tiendas online',
-        descripcion: 'Responde preguntas frecuentes, recomienda productos y ayuda en el proceso de compra.',
-        img: '/imgAgentes/robotecommerce.jpg',
-        ventajas: ['Reduce cargas de soporte', 'Aumenta la conversión de compra']
+        "id": 2,
+        "nombre": "Mercurio",
+        "nombreUrl": "mercurio",
+        "titulo": "Chatbot eCommerce",
+        "descripcion": "Responde preguntas frecuentes, recomienda productos y ayuda en el proceso de compra.",
+        "img": "/imgAgentes/robotecommerce.jpg"
     },
     {
-        id: 3,
-        nombre: 'Redactor IA',
-        titulo: 'Generador de contenido para blogs y redes',
-        descripcion: 'Crea textos optimizados para SEO, posts, descripciones de productos y más.',
-        img: '/imgAgentes/robotblog.jpg',
-        ventajas: ['Mejora el posicionamiento web', 'Ahorra costes en creación de contenido']
+        "id": 3,
+        "nombre": "Orfeo",
+        "nombreUrl": "orfeo",
+        "titulo": "Redactor IA",
+        "descripcion": "Crea textos optimizados para SEO, posts, descripciones de productos y más.",
+        "img": "/imgAgentes/robotblog.jpg"
     },
     {
-        id: 4,
-        nombre: 'Asistente Comercial',
-        titulo: 'Comparador de modelos, precios y financiación',
-        descripcion: 'Ayuda a los clientes a elegir productos complejos como coches o seguros.',
-        img: '/imgAgentes/robotcomercial.jpg',
-        ventajas: ['Facilita decisiones complejas', 'Genera leads cualificados']
+        "id": 4,
+        "nombre": "Atlas",
+        "nombreUrl": "atlas",
+        "titulo": "Asistente Comercial",
+        "descripcion": "Ayuda a los clientes a elegir productos complejos como coches o seguros.",
+        "img": "/imgAgentes/robotcomercial.jpg"
     },
     {
-        id: 5,
-        nombre: 'Asistente de Comercio',
-        titulo: 'Atención y automatización para tiendas físicas',
-        descripcion: 'Ayuda con horarios, stock, devoluciones y promociones locales.',
-        img: '/imgAgentes/robotcomercio.jpg',
-        ventajas: ['Reduce interrupciones al personal', 'Mejora la experiencia del cliente']
+        "id": 5,
+        "nombre": "Aureo",
+        "nombreUrl": "Aureo",
+        "titulo": "Asistente de Comercio",
+        "descripcion": "Ayuda con horarios, stock, devoluciones y promociones locales.",
+        "img": "/imgAgentes/robotcomercio.jpg"
     },
     {
-        id: 6,
-        nombre: 'Newsletter Bot',
-        titulo: 'Asistente de email marketing',
-        descripcion: 'Crea campañas automáticas de promociones, novedades o eventos.',
-        img: '/imgAgentes/robotnewsettler.jpg',
-        ventajas: ['Aumenta la retención de clientes', 'Automatiza la comunicación']
+        "id": 6,
+        "nombre": "Helios",
+        "nombreUrl": "helios",
+        "titulo": "Newsletter Bot",
+        "descripcion": "Crea campañas automáticas de promociones, novedades o eventos.",
+        "img": "/imgAgentes/robotnewsettler.jpg"
     },
     {
-        id: 7,
-        nombre: 'Generador de Presupuestos',
-        titulo: 'Crea presupuestos rápidos a partir de texto',
-        descripcion: 'Clientes describen su necesidad y el sistema genera un PDF estimativo.',
-        img: '/imgAgentes/robotpresupuestos.jpg',
-        ventajas: ['Acelera el cierre de ventas', 'Proporciona atención inmediata']
+        "id": 7,
+        "nombre": "Cronos",
+        "nombreUrl": "cronos",
+        "titulo": "Generador de Presupuestos",
+        "descripcion": "Clientes describen su necesidad y el sistema genera un PDF estimativo.",
+        "img": "/imgAgentes/robotpresupuestos.jpg"
     },
     {
-        id: 8,
-        nombre: 'Recepcionista Virtual',
-        titulo: 'Agente de recepción digital inteligente',
-        descripcion: 'Filtra clientes reales, responde preguntas frecuentes y dirige a la persona adecuada.',
-        img: '/imgAgentes/robotrecepcionista.jpg',
-        ventajas: ['Reduce distracciones del equipo', 'Atiende 24/7 sin perder leads']
+        "id": 8,
+        "nombre": "Atenea",
+        "nombreUrl": "atenea",
+        "titulo": "Recepcionista Virtual",
+        "descripcion": "Filtra clientes reales, responde preguntas frecuentes y dirige a la persona adecuada.",
+        "img": "/imgAgentes/robotrecepcionista.jpg"
     }
 ];

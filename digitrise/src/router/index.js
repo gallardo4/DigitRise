@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   { path: '/', name: 'home', component: () => import('../views/HomeView.vue') },
   { path: '/agentes', name: 'agentes', component: () => import('../views/AgentesView.vue') },
-  { path: '/agente/:id', name: 'agenteDetalle', component: () => import('../views/AgenteDetalleView.vue') },
+  { path: '/agentes/:nombreUrl', name: 'agenteDetalle', component: () => import('../views/AgenteDetalleView.vue') },
   { path: '/equipo', name: 'equipo', component: () => import('../views/EquipoView.vue') },
   { path: '/proceso', name: 'proceso', component: () => import('../views/ProcesoView.vue') },
   { path: '/politica-privacidad', name: 'politica-privacidad', component: () => import('../views/PoliticaView.vue'), meta: { hideHeaderFooter: true } },

@@ -5,7 +5,7 @@ import { agentes } from '../assets/data/agentes.js'
 
 const route = useRoute()
 const agente = computed(() =>
-    agentes.find((a) => a.id === parseInt(route.params.id))
+    agentes.find((a) => a.nombreUrl === route.params.nombreUrl)
 )
 </script>
 
@@ -18,13 +18,6 @@ const agente = computed(() =>
 
         <h2 class="tituloGrande">{{ agente.titulo }}</h2>
         <p class="texto">{{ agente.descripcion }}</p>
-
-        <div>
-            <h4 class="texto"><strong class="textoColor">Ventajas:</strong></h4>
-            <ul>
-                <li class="texto" v-for="(v, i) in agente.ventajas" :key="i">{{ v }}</li>
-            </ul>
-        </div>
     </div>
 
     <div v-else>
