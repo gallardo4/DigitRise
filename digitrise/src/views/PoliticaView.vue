@@ -86,7 +86,7 @@ import Volver from '../components/Volver.vue';
 
         <div>
             <h2 class="tituloPolitica">5. Plazos de conservación</h2>
-            <p class="textoColor">Conservaremos tus datos el tiempo necesario para los fines indicados o el exigido por ley.</p>
+            <p class="textoPolitica">Conservaremos tus datos el tiempo necesario para los fines indicados o el exigido por ley.</p>
         </div>
 
         <div>
