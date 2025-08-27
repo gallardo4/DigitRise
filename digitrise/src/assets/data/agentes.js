@@ -3,7 +3,7 @@ export const agentes = [
         "id": 1,
         "nombre": "Kairos",
         "nombreUrl": "kairos",
-        "titulo": "Gestor de Agenda",
+        "titulo": "Gestión de Agenda",
         "descripcion": "Kairos comprueba la disponibilidad y crea, actualiza y elimina eventos en tu calendario mediante comandos de voz o texto a través de WhatsApp.",
         "img": "/imgAgentes/kairos.png",
     },
@@ -11,7 +11,7 @@ export const agentes = [
         "id": 2,
         "nombre": "Mercurio",
         "nombreUrl": "mercurio",
-        "titulo": "Llamadas Entrantes",
+        "titulo": "Asistencia Telefónica",
         "descripcion": "Mercurio atiende llamadas entrantes, automatizando reservas y programando citas por teléfono de forma natural y eficiente.",
         "img": "/imgAgentes/mercurio.png"
     },
@@ -19,16 +19,16 @@ export const agentes = [
         "id": 3,
         "nombre": "Helios",
         "nombreUrl": "helios",
-        "titulo": "Redactor IA",
-        "descripcion": "Crea textos optimizados para SEO, posts, descripciones de productos y más.",
+        "titulo": "Creación de Contenido",
+        "descripcion": "Helios crea contenido en redes sociales de forma automática.",
         "img": "/imgAgentes/helios.png"
     },
     {
         "id": 4,
         "nombre": "Cronos",
         "nombreUrl": "cronos",
-        "titulo": "Asistente Comercial",
-        "descripcion": "Ayuda a los clientes a elegir productos complejos como coches o seguros.",
+        "titulo": "Atención al Cliente",
+        "descripcion": "Cronos atiende consultas de clientes en tiempo real en webs, WhatsApp, SMS y Telegram. Su respuesta es inmediata y es capaz de gestionar los casos más complejos.",
         "img": "/imgAgentes/cronos.png"
     }
 ];

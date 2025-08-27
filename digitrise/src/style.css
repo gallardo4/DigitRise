@@ -1043,12 +1043,14 @@ textarea:not(:placeholder-shown)+label {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
+  user-select: none;
 }
 
 .textoFooter {
   color: var(--color-text);
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  user-select: none;
 }
 
 .nav-link-footer {
@@ -1060,6 +1062,7 @@ textarea:not(:placeholder-shown)+label {
   position: relative;
   padding-bottom: 4px;
   transition: color var(--transition-speed), border-color var(--transition-speed);
+  user-select: none;
 }
 
 .nav-link-footer:hover {
@@ -1089,6 +1092,7 @@ textarea:not(:placeholder-shown)+label {
 .textoRights {
   color: var(--color-text);
   font-family: var(--font-family-secondary);
+  user-select: none;
 }
 
 @media (max-width: 768px) {
