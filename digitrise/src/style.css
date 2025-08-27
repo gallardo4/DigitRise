@@ -55,7 +55,6 @@ main {
   -webkit-backdrop-filter: none;
   border: none;
   cursor: pointer;
-  user-select: none;
   transition:
     background-color 0.4s ease,
     color 0.4s ease,
@@ -80,7 +79,6 @@ main {
   -webkit-backdrop-filter: none;
   border: none;
   cursor: pointer;
-  user-select: none;
   transition:
     background-color 0.4s ease,
     color 0.4s ease,
@@ -114,7 +112,6 @@ main {
   margin-bottom: 1rem;
   text-decoration: none;
   color: #fff;
-  user-select: none;
   transition: color 0.3s ease;
 }
 
@@ -229,7 +226,6 @@ main {
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
   cursor: pointer;
-  user-select: none;
   transition:
     background-color 0.4s ease,
     color 0.4s ease,
@@ -336,7 +332,7 @@ main {
     font-weight: 700;
     color: #f0f0f0;
     text-align: center;
-    user-select: none;
+
     padding: 0.5rem 0;
     width: 100%;
     max-width: 300px;
@@ -388,7 +384,6 @@ main {
   border: 2px solid #ffffff;
   border-radius: 1.25rem;
   cursor: pointer;
-  user-select: none;
   transition:
     background-color 0.4s ease,
     color 0.4s ease,
@@ -409,7 +404,6 @@ main {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  user-select: none;
   font-size: 2rem;
   margin-top: 1rem;
 }
@@ -430,7 +424,6 @@ main {
   line-height: 1.8;
   max-width: 800px;
   margin: 1rem 0;
-  user-select: none;
 }
 
 .info-extra {
@@ -910,7 +903,6 @@ label {
   transition: all 0.3s ease;
   background: transparent;
   padding: 0 0.25rem;
-  user-select: none;
 }
 
 input:focus+label,
@@ -939,7 +931,6 @@ textarea:not(:placeholder-shown)+label {
   border: 2px solid #fff;
   border-radius: 1.25rem;
   cursor: pointer;
-  user-select: none;
   transition:
     background-color 0.4s ease,
     color 0.4s ease,
@@ -990,7 +981,6 @@ textarea:not(:placeholder-shown)+label {
   font-weight: 900;
   font-family: var(--font-family-secondary);
   letter-spacing: 1px;
-  user-select: none;
   font-size: 1rem;
   margin-top: 1rem;
 }
@@ -1043,14 +1033,12 @@ textarea:not(:placeholder-shown)+label {
   margin-bottom: 1.5rem;
   font-weight: 900;
   letter-spacing: 1px;
-  user-select: none;
 }
 
 .textoFooter {
   color: var(--color-text);
   font-size: 0.9rem;
   margin-top: 0.5rem;
-  user-select: none;
 }
 
 .nav-link-footer {
@@ -1062,7 +1050,6 @@ textarea:not(:placeholder-shown)+label {
   position: relative;
   padding-bottom: 4px;
   transition: color var(--transition-speed), border-color var(--transition-speed);
-  user-select: none;
 }
 
 .nav-link-footer:hover {
@@ -1092,7 +1079,6 @@ textarea:not(:placeholder-shown)+label {
 .textoRights {
   color: var(--color-text);
   font-family: var(--font-family-secondary);
-  user-select: none;
 }
 
 @media (max-width: 768px) {
