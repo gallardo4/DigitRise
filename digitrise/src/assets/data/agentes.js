@@ -3,8 +3,8 @@ export const agentes = [
         "id": 1,
         "nombre": "Kairos",
         "nombreUrl": "kairos",
-        "titulo": "Asistente Secretario",
-        "descripcion": "Kairos es tu asistente virtual que entiende tus notas de voz o mensajes y gestiona tu agenda: crea, actualiza o elimina reuniones, confirma disponibilidad y te recuerda lo importante, todo con lenguaje natural.",
+        "titulo": "Gestor de Agenda",
+        "descripcion": "Kairos comprueba la disponibilidad y crea, actualiza y elimina eventos en tu calendario mediante comandos de voz o texto a través de WhatsApp.",
         "img": "/imgAgentes/kairos.png",
     },
     {
