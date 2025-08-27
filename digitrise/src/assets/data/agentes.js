@@ -11,8 +11,8 @@ export const agentes = [
         "id": 2,
         "nombre": "Mercurio",
         "nombreUrl": "mercurio",
-        "titulo": "Chatbot eCommerce",
-        "descripcion": "Responde preguntas frecuentes, recomienda productos y ayuda en el proceso de compra.",
+        "titulo": "Llamadas Entrantes",
+        "descripcion": "Mercurio atiende llamadas entrantes, automatizando reservas y programando citas por teléfono de forma natural y eficiente.",
         "img": "/imgAgentes/mercurio.png"
     },
     {
