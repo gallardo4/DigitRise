@@ -18,12 +18,12 @@
 
     <div class="info-extra">
       <div>
-        <h3 class="tituloGrande"><span class="textoColor">Proyectos</span> llevados a cabo</h3>
+        <h3 class="tituloGrande">Descubre el <span class="textoColor">proceso</span></h3>
         <p class="texto">
-          Descubre cómo hemos ayudado a empresas como la tuya a transformar su presencia digital y optimizar sus procesos
-          con nuestras soluciones de IA. Cada proyecto es una historia de éxito.
+          Desde la consulta inicial hasta la implementación y soporte continuo, te guiamos en cada paso para asegurar
+          que tu agente IA se integre perfectamente con tus operaciones y objetivos comerciales.
         </p>
-        <RouterLink class="linkContact" to="/proyectos"><button class="btn" onclick="this.blur()">Descubre los proyectos</button></RouterLink>
+        <RouterLink class="linkContact" to="/proceso"><button class="btn" onclick="this.blur()">Explora el proceso</button></RouterLink>
       </div>
 
       <div>
