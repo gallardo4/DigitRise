@@ -19,8 +19,8 @@ export const agentes = [
         "id": 3,
         "nombre": "Helios",
         "nombreUrl": "helios",
-        "titulo": "Creación de Contenido",
-        "descripcion": "Helios crea contenido en redes sociales de forma automática.",
+        "titulo": "Generación de Contenido",
+        "descripcion": "Helios hace de las imágenes que recibe a través de WhatsApp el contenido visual que necesitas para tus redes sociales o campañas de marketing.",
         "img": "/imgAgentes/helios.png"
     },
     {
