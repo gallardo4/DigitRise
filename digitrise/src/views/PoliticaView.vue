@@ -137,7 +137,7 @@ import Volver from '../components/Volver.vue';
 
     <footer class="footer">
         <div class="rights">
-            <p class="textoRights">&copy; {{ new Date().getFullYear() }} DigitRise - Todos los derechos reservados.</p>
+            <p class="textoRights">&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
         </div>
     </footer>
 </template>

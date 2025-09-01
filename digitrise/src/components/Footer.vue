@@ -47,7 +47,7 @@ watch(isMenuOpen, (open) => {
     </div>
 
     <div class="rights">
-      <p class="textoRights">&copy; {{ new Date().getFullYear() }} DigitRise - Todos los derechos reservados.</p>
+      <p class="textoRights">&copy; {{ new Date().getFullYear() }} DigitRise. Todos los derechos reservados.</p>
     </div>
   </footer>
 </template>
