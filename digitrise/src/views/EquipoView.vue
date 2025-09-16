@@ -4,7 +4,7 @@ const team = [
     nombre: 'Alex Martín',
     rol: 'Estrategia Digital',
     frase: 'Creamos DigitRise para impulsar a marcas con visión, usando la tecnología como aliada.',
-    imagen: '/imgEquipo/fotoAlex.jpg',
+    imagen: '/imgEquipo/fotoAlex.jpeg',
   },
   {
     nombre: 'Arnau Gallardo',
