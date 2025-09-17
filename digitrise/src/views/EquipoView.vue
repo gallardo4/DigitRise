@@ -3,13 +3,13 @@ const team = [
   {
     nombre: 'Alex Martín',
     rol: 'Estrategia Digital',
-    frase: 'Creamos DigitRise para impulsar a marcas con visión, usando la tecnología como aliada.',
+    frase: '"Creamos DigitRise para impulsar a marcas con visión, usando la tecnología como aliada."',
     imagen: '/imgEquipo/fotoAlex.jpeg',
   },
   {
     nombre: 'Arnau Gallardo',
     rol: 'Desarrollo Web, IA y Automatización',
-    frase: 'Creemos que la inteligencia artificial no reemplaza personas: potencia su creatividad y resultados.',
+    frase: '"Creemos que la inteligencia artificial no reemplaza personas: potencia su creatividad y resultados."',
     imagen: '/imgEquipo/fotoGallardo.jpg',
   },
 ]
