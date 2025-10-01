@@ -23,7 +23,7 @@ watch(isMenuOpen, (open) => {
         <div>
           <RouterLink to="/" class="nav-link-footer" @click="isMenuOpen = false">Inicio</RouterLink>
           <RouterLink to="/agentes" class="nav-link-footer" @click="isMenuOpen = false">Agentes IA</RouterLink>
-          <RouterLink to="/proyectos" class="nav-link-footer" @click="isMenuOpen = false">Proyectos</RouterLink>
+          <RouterLink to="/proceso" class="nav-link-footer" @click="isMenuOpen = false">Proceso</RouterLink>
           <RouterLink to="/equipo" class="nav-link-footer" @click="isMenuOpen = false">Equipo</RouterLink>
         </div>
       </div>
