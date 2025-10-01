@@ -771,6 +771,7 @@ main {
 }
 
 .lista-proceso li {
+  font-family: var(--font-family-secondary);
   position: relative;
   margin: 2rem 0;
   padding-left: 3.5rem;
