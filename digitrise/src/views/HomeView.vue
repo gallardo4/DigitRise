@@ -10,7 +10,7 @@
       <h1 class="tituloGrande"><span class="textoColor">Transforma tus procesos</span> y haz crecer tu negocio</h1>
       <p class="texto">
         En <strong>DigitRise</strong>, analizamos los retos de tu empresa y diseñamos soluciones de automatización 
-        que eliminan <strong>tareas repetitivas</strong>, reducen <strong>costes</strong> y mejoran la <strong>experiencia</strong> de tus clientes. 
+        que <strong>eliminan tareas repetitivas</strong>, <strong>reducen costes</strong> y <strong>mejoran la experiencia</strong> de tus clientes. 
         Ponemos la inteligencia artificial al servicio de lo que realmente impulsa tu negocio.
       </p>
       <RouterLink class="linkContact" to="/agentes">
@@ -20,12 +20,16 @@
 
     <div class="info-extra">
       <div>
-        <h3 class="tituloGrande">Descubre el <span class="textoColor">proceso</span></h3>
+        <h3 class="tituloGrande">Descubre nuestro <span class="textoColor">método</span></h3>
         <p class="texto">
-          Desde la <strong>consulta inicial</strong> hasta la <strong>implementación</strong> y <strong>soporte</strong> continuo, te guiamos en cada paso para asegurar
-          que tu agente IA se integre perfectamente con tus operaciones y objetivos comerciales.
+          Te acompañamos desde la <strong>identificación de problemas</strong> hasta la 
+          <strong>implementación de soluciones</strong> y un <strong>soporte continuo</strong>. 
+          Nuestro enfoque garantiza que cada automatización se integre de forma efectiva en tus procesos 
+          y aporte resultados reales a tu negocio.
         </p>
-        <RouterLink class="linkContact" to="/proceso"><button class="btn" onclick="this.blur()">Explora el proceso</button></RouterLink>
+        <RouterLink class="linkContact" to="/proceso">
+          <button class="btn" onclick="this.blur()">Explora el proceso</button>
+        </RouterLink>
       </div>
 
       <div>
