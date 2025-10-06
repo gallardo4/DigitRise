@@ -285,14 +285,13 @@ main {
   .containerHeader {
     flex-direction: row;
     align-items: center;
-    padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     position: relative;
   }
 
   .logoHeader {
-    max-width: 180px;
+    max-width: 100px;
   }
 
   /* Mostrar hamburguesa en móvil */
