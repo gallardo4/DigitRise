@@ -9,7 +9,7 @@ import Volver from '../components/Volver.vue';
                 <Volver class="btnVolver" />
             </div>
             <RouterLink to="/">
-                <img src="/logoGrandeHeader.svg" alt="DigitRise Logo" class="logoHeader" />
+                <img src="/logoBase.png" alt="DigitRise Logo" class="logoHeader" />
             </RouterLink>
         </div>
     </header>

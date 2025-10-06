@@ -40,7 +40,12 @@ watch(isMenuOpen, (open) => {
         <h4 class="tituloFooter">Síguenos</h4>
         <div>
           <a href="https://www.instagram.com/digitrise/" target="_blank" aria-label="Instagram">
-            <img src="/logoIG.png" alt="Logo Instagram" width="80px" class="social-link" />
+            <img src="/rrss/logoIG.png" alt="Logo Instagram" width="80px" class="social-link" />
+          </a>
+        </div>
+        <div>
+          <a href="https://www.tiktok.com/@digitrise.net" target="_blank" aria-label="TikTok">
+            <img src="/rrss/logoTikTok.png" alt="Logo TikTok" width="80px" class="social-link" />
           </a>
         </div>
       </div>
