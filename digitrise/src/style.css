@@ -998,6 +998,7 @@ textarea:not(:placeholder-shown)+label {
 @media (max-width: 768px) {
   .containerPolitica {
     padding: 0 1rem;
+    margin-top: -3rem;
   }
 
   .textoPolitica {
