@@ -16,7 +16,7 @@ const toggleMenu = () => {
   <header class="header">
     <div class="containerHeader">
       <RouterLink to="/">
-        <img src="/logoGrandeHeader.svg" alt="DigitRise Logo" class="logoHeader" />
+        <img src="/logoBase.png" alt="DigitRise Logo" class="logoHeader" />
       </RouterLink>
 
       <!-- Hamburguesa (solo móvil) -->

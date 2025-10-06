@@ -13,7 +13,7 @@ watch(isMenuOpen, (open) => {
     <div class="containerFooter">
       <div class="footer1">
         <RouterLink to="/">
-          <img src="/logoFooter.svg" alt="DigitRise Logo" class="logoFooter" />
+          <img src="/logoBase.png" alt="DigitRise Logo" class="logoFooter" />
         </RouterLink>
         <p class="textoFooter">Automatiza. Acelera. Avanza.</p>
       </div>

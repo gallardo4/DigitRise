@@ -162,7 +162,7 @@ main {
 
 .logoHeader {
   display: block;
-  max-width: 200px;
+  max-width: 120px;
   height: auto;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -1028,7 +1028,6 @@ textarea:not(:placeholder-shown)+label {
   max-width: 120px;
   height: auto;
   border-radius: 2rem;
-  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
